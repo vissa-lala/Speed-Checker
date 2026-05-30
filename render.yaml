@@ -2,7 +2,7 @@ services:
   - type: web
     name: neon-speed-dashboard
     env: node
-    buildCommand: bash .render/build.sh
+    buildCommand: npm install
     startCommand: serve -s build -l 3000
     envVars:
       - key: NODE_ENV
