@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: neon-speed-dashboard
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm install -g serve && serve -s build -l 3000
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_MODULES_CACHE
+        value: "true"
