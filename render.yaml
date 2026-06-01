@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: speed-checker
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    branch: develop-deploy
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 20.11.0
+    staticSiteDir: build
