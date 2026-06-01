@@ -1,70 +1,191 @@
-# Getting Started with Create React App
+# Neon Speed - Separate Frontend & Backend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project now uses a proper client-server architecture with:
 
-## Available Scripts
+- **Backend**: Node.js + Express server (port 5000)
+- **Frontend**: React application (port 3000)
 
-In the project directory, you can run:
+## Project Structure
 
-### `npm start`
+```
+Speed-Checker/
+├── backend/
+│   ├── server.js           # Express server with speed test API
+│   ├── package.json
+│   └── README.md
+├── frontend/
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── manifest.json
+│   │   └── robots.txt
+│   ├── src/
+│   │   ├── App.js          # React component with speed test logic
+│   │   ├── index.js
+│   │   ├── index.css
+│   │   ├── reportWebVitals.js
+│   │   └── setupTests.js
+│   ├── package.json
+│   └── .env (optional)
+├── package.json
+└── README.md
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Quick Start
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 1. Install Backend Dependencies
 
-### `npm test`
+```bash
+cd backend
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2. Install Frontend Dependencies
 
-### `npm run build`
+```bash
+cd frontend
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3. Start Backend Server
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+cd backend
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The backend will run on `http://localhost:5000`
 
-### `npm run eject`
+**For development with auto-reload:**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm run dev
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 4. Start Frontend (in a new terminal)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+cd frontend
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The frontend will run on `http://localhost:3000` and automatically open in your browser.
 
-## Learn More
+## How Speed Testing Works
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Backend API Endpoints
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Ping Test
 
-### Code Splitting
+```
+GET /api/ping
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Measures round-trip latency to the server.
 
-### Analyzing the Bundle Size
+#### Download Test
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+GET /api/download?size=10485760
+```
 
-### Making a Progressive Web App
+Downloads random data and measures speed.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- `size`: Bytes to download (default: 10MB)
 
-### Advanced Configuration
+#### Upload Test
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+POST /api/upload-large
+```
 
-### Deployment
+Receives data and measures upload speed.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Speed Calculation
 
-### `npm run build` fails to minify
+The frontend measures speed using the **fast.com logic**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. **Download**: Multiple files (1MB, 5MB, 10MB) are downloaded sequentially
+   - Speed = (Total Bytes × 8 bits) / (Time in seconds) / 1,000,000 = Mbps
+
+2. **Upload**: Multiple data chunks (1MB, 5MB) are uploaded
+   - Speed = (Total Bytes × 8 bits) / (Time in seconds) / 1,000,000 = Mbps
+
+3. **Ping**: Measures latency using a simple fetch request
+   - Ping = Round-trip time in milliseconds
+
+## Key Improvements
+
+✅ **Accurate Speed Measurement**: Uses actual data transfer instead of external URLs  
+✅ **Local Testing**: Backend server runs locally  
+✅ **Progressive Testing**: Downloads and uploads multiple file sizes  
+✅ **Real-time Animation**: Shows speed building up in real-time  
+✅ **Responsive Design**: Works on desktop and mobile  
+✅ **Production Ready**: Proper error handling and CORS support
+
+## Configuration
+
+### Backend
+
+Set custom port:
+
+```bash
+PORT=8000 npm start
+```
+
+### Frontend
+
+Create a `.env` file in the frontend folder:
+
+```
+REACT_APP_API_URL=http://localhost:5000
+```
+
+For production, update this to your backend URL.
+
+## Troubleshooting
+
+### "Speed test failed" error
+
+- Make sure backend is running on port 5000
+- Check CORS is enabled (it is by default)
+- Check browser console for detailed errors
+
+### Wrong speeds
+
+- Backend must be running locally for accurate measurement
+- Network latency between frontend and backend affects results
+- Ensure no firewall blocking localhost communication
+
+### Frontend cannot connect to backend
+
+- Verify backend is running: `http://localhost:5000/health`
+- Check if you're using a custom port and update `.env` accordingly
+
+## Development
+
+### Adding Features
+
+1. Add new API endpoints in `backend/server.js`
+2. Update frontend to call the new endpoints in `frontend/src/App.js`
+3. Test both frontend and backend in development mode
+
+### Building for Production
+
+```bash
+# Frontend
+cd frontend
+npm run build
+
+# Backend is ready as-is
+```
+
+## Performance Tips
+
+- Backend and frontend should run on the same machine for accurate testing
+- Close other bandwidth-consuming applications during testing
+- Use a stable internet connection for best results
+- Multiple test runs help identify connection stability
+
+## License
+
+MIT

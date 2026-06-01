@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <!-- Background -->
+  <rect width="192" height="192" fill="#050816" rx="24"/>
+  
+  <!-- Gauge circle background -->
+  <circle cx="96" cy="96" r="70" fill="none" stroke="#1a1a3e" stroke-width="8"/>
+  
+  <!-- Speed needle -->
+  <g transform="translate(96, 96)">
+    <!-- Needle -->
+    <line x1="0" y1="0" x2="0" y2="-55" stroke="#00d4ff" stroke-width="6" stroke-linecap="round"/>
+    <!-- Center dot -->
+    <circle cx="0" cy="0" r="8" fill="#00d4ff"/>
+  </g>
+  
+  <!-- Speed arc (colored gradient effect) -->
+  <defs>
+    <linearGradient id="speedGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#00ff88;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff6b6b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Arc from 180 to 0 degrees -->
+  <path d="M 26 96 A 70 70 0 0 1 166 96" fill="none" stroke="url(#speedGradient)" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- Tick marks -->
+  <g stroke="#00d4ff" stroke-width="2" stroke-linecap="round">
+    <line x1="96" y1="20" x2="96" y2="30"/>
+    <line x1="145" y1="31" x2="140" y2="38"/>
+    <line x1="167" y1="59" x2="160" y2="63"/>
+    <line x1="176" y1="96" x2="168" y2="96"/>
+  </g>
+  
+  <!-- Text: Speed Checker -->
+  <text x="96" y="135" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#00d4ff" text-anchor="middle">SPEED</text>
+</svg>
