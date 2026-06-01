@@ -1,8 +1,0 @@
-services:
-  - type: web
-    name: neon-speed-dashboard
-    env: node
-    startCommand: serve -s build -l 3000
-    envVars:
-      - key: NODE_ENV
-        value: production
