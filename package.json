@@ -1,0 +1,25 @@
+{
+  "name": "speed-checker",
+  "version": "1.0.0",
+  "description": "Speed Checker - Internet Speed Test Tool",
+  "private": true,
+  "scripts": {
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install && cd ..",
+    "start": "npm start --prefix backend",
+    "start:frontend": "npm start --prefix frontend",
+    "build": "npm run build --prefix frontend",
+    "dev": "concurrently \"npm run dev --prefix backend\" \"npm start --prefix frontend\"",
+    "build:all": "npm run build --prefix frontend"
+  },
+  "engines": {
+    "node": "20.x",
+    "npm": "10.x"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "workspaces": [
+    "backend",
+    "frontend"
+  ]
+}

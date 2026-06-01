@@ -114,7 +114,7 @@ export default function TermsOfService() {
 
         <div className="legal-footer">
           <Link to="/" className="back-link">
-            ← Back to Speed Checker
+            ← Back to Landing Page
           </Link>
         </div>
       </div>

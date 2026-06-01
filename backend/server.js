@@ -1,9 +1,19 @@
 import express from 'express';
 import cors from 'cors';
 import { randomBytes } from 'crypto';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+// Get __dirname in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Serve static files from frontend build directory
+const frontendPath = path.join(__dirname, '../frontend/build');
+app.use(express.static(frontendPath));
 
 // Buffer cache for optimal performance
 const bufferCache = new Map();
@@ -161,6 +171,15 @@ app.post('/api/upload-large', (req, res) => {
       received: receivedBytes,
       success: false,
     });
+  });
+});
+
+// Serve frontend for all non-API routes (SPA fallback)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(frontendPath, 'index.html'), err => {
+    if (err) {
+      res.status(500).send('Error loading app');
+    }
   });
 });
 
