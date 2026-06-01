@@ -3,10 +3,12 @@ services:
     name: speed-checker
     env: node
     plan: free
-    buildCommand: npm ci && npm run build
+    branch: develop-deploy
+    buildCommand: npm install --legacy-peer-deps && npm run build
     startCommand: npx serve -s build -l 3000
-    routes:
-      - path: /*
-        destination: /index.html
+    envVars:
+      - key: NODE_ENV
+        value: production
+
 
 
