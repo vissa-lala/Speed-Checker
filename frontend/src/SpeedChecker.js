@@ -315,8 +315,7 @@ function SpeedChecker() {
         {/* HEADER */}
         <div className="topbar">
           <div className="d-flex align-items-center gap-3">
-            <Wifi color="#00f7ff" size={34} />
-            <h1 className="logo-text">SPEED CHECKER</h1>
+            <img src="/logo.png" alt="Speed Checker Logo" className="logo-img" style={{ height: '50px', width: 'auto' }} />
           </div>
 
           <button className="run-btn" onClick={runTest} disabled={testing}>
