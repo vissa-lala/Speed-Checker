@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Footer from '../components/Footer';
 
 export default function AboutUs() {
   return (
@@ -182,31 +183,14 @@ export default function AboutUs() {
               </p>
             </div>
           </section>
-
-          <section>
-            <h2>Legal</h2>
-            <ul>
-              <li>
-                <Link to="/privacy-policy">Privacy Policy</Link>
-              </li>
-              <li>
-                <Link to="/terms-of-service">Terms of Service</Link>
-              </li>
-              <li>
-                <Link to="/disclaimer">Disclaimer</Link>
-              </li>
-              <li>
-                <Link to="/cookie-policy">Cookie Policy</Link>
-              </li>
-            </ul>
-          </section>
         </div>
-
         <div className="legal-footer">
           <Link to="/" className="back-link">
-            ← Back to Landing Page
+            ← Back to Speed Test
           </Link>
         </div>
+
+        <Footer />
       </div>
     </div>
   );

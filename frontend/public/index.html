@@ -1,108 +1,74 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Character Encoding & Viewport -->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <title>SpeedChecker - Free Internet Speed Test</title>
 
-    <!-- SEO Meta Tags -->
-    <title>Speed Checker - Fast & Accurate Internet Speed Test | Real-Time Monitoring</title>
     <meta
       name="description"
-      content="Speed Checker provides accurate internet speed testing with real-time monitoring. Test your download, upload speeds and ping latency instantly. Fast, reliable, and free speed test tool."
+      content="Test your internet speed instantly with SpeedChecker. Check download speed, upload speed, ping, jitter, WiFi performance, and network quality."
     />
+
     <meta
       name="keywords"
-      content="internet speed test, bandwidth test, speed checker, download speed, upload speed, ping test, internet speed checker, connection speed, network test, WiFi speed test"
+      content="internet speed test, speed checker, WiFi speed test, broadband speed test, download speed test, upload speed test, ping test, jitter test"
     />
-    <meta name="author" content="Speed Checker" />
-    <meta name="theme-color" content="#050816" />
-    <meta
-      name="robots"
-      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    />
-    <meta name="language" content="English" />
-    <meta name="revisit-after" content="7 days" />
-    <meta name="copyright" content="© 2026 Speed Checker. All rights reserved." />
 
-    <!-- Open Graph (Social Media) -->
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:title" content="Speed Checker - Internet Speed Test Tool" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="canonical" href="https://speedchecker.in/" />
+
+    <meta property="og:title" content="SpeedChecker - Free Internet Speed Test" />
     <meta
       property="og:description"
-      content="Test your internet speed with Speed Checker. Get accurate measurements of download, upload speeds and ping. Real-time monitoring and detailed analytics."
+      content="Check download speed, upload speed, ping, jitter, and network quality instantly."
     />
-    <meta property="og:url" content="https://speedchecker.in" />
-    <meta property="og:site_name" content="Speed Checker" />
-    <meta property="og:image" content="%PUBLIC_URL%/logo.svg" />
-    <meta property="og:image:type" content="image/svg+xml" />
-    <meta property="og:image:width" content="192" />
-    <meta property="og:image:height" content="192" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://speedchecker.in/" />
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Speed Checker - Internet Speed Test" />
+    <meta name="twitter:title" content="SpeedChecker - Free Internet Speed Test" />
     <meta
       name="twitter:description"
-      content="Fast and accurate internet speed testing. Check your download/upload speeds and ping with Speed Checker."
+      content="Free browser-based internet speed test for download speed, upload speed, ping, and jitter."
     />
-    <meta name="twitter:image" content="%PUBLIC_URL%/logo.svg" />
-    <meta name="twitter:image:type" content="image/svg+xml" />
-    <meta name="twitter:creator" content="@speedchecker" />
 
-    <!-- Additional SEO Tags -->
-    <link rel="canonical" href="https://speedchecker.in" />
-    <link rel="alternate" hreflang="en" href="https://speedchecker.in" />
-    <meta name="geo.placename" content="Global" />
-    <meta name="geo.position" content="0;0" />
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
 
-    <!-- Icons & Manifest -->
-    <link rel="icon" href="%PUBLIC_URL%/logo.svg" type="image/svg+xml" sizes="any" />
-    <link rel="alternate icon" href="%PUBLIC_URL%/logo.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.svg" sizes="192x192" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <meta name="msapplication-config" content="%PUBLIC_URL%/browserconfig.xml" />
-    <meta name="msapplication-TileColor" content="#050816" />
-    <meta name="msapplication-TileImage" content="%PUBLIC_URL%/logo.svg" />
+    <!-- Google AdSense: add only after AdSense approval or when Google gives your publisher ID -->
+    <!--
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+      crossorigin="anonymous">
+    </script>
+    -->
 
-    <!-- Google AdSense -->
-    <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE" />
-
-    <!-- Preconnect to External Resources -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-  </head>
-  <body>
-    <noscript>
-      <p>
-        Speed Checker requires JavaScript to be enabled. Please enable JavaScript in your browser to
-        use this internet speed test tool.
-      </p>
-    </noscript>
-    <div id="root"></div>
-
-    <!-- Structured Data (JSON-LD) for Google Search -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Speed Checker",
-        "description": "Fast and accurate internet speed test tool. Test your download, upload speeds and ping latency in real-time.",
+        "@type": "WebApplication",
+        "name": "SpeedChecker",
         "url": "https://speedchecker.in",
-        "applicationCategory": "Utility",
-        "operatingSystem": "All",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.8",
-          "ratingCount": "1000"
-        }
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "description": "Free internet speed test tool to check download speed, upload speed, ping, jitter, and network quality."
       }
     </script>
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run SpeedChecker.</noscript>
+    <div id="root"></div>
   </body>
 </html>

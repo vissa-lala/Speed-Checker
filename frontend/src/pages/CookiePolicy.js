@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Footer from '../components/Footer';
 
 export default function CookiePolicy() {
   return (
@@ -208,9 +209,11 @@ export default function CookiePolicy() {
 
         <div className="legal-footer">
           <Link to="/" className="back-link">
-            ← Back to Landing Page
+            ← Back to Speed Test
           </Link>
         </div>
+
+        <Footer />
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Footer from '../components/Footer';
 
 export default function Disclaimer() {
   return (
@@ -79,8 +80,6 @@ export default function Disclaimer() {
             </p>
             <ul>
               <li>Your Internet Service Provider (ISP)</li>
-              <li>Ookla (Speedtest.net)</li>
-              <li>Netflix (Fast.com)</li>
               <li>Any telecommunications authority</li>
               <li>Any government agency</li>
             </ul>
@@ -128,9 +127,11 @@ export default function Disclaimer() {
 
         <div className="legal-footer">
           <Link to="/" className="back-link">
-            ← Back to Landing Page
+            ← Back to Speed Test
           </Link>
         </div>
+
+        <Footer />
       </div>
     </div>
   );

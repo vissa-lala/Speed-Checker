@@ -1,51 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Main Page -->
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
-    <loc>https://speedchecker.in</loc>
-    <lastmod>2026-06-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+    <loc>https://speedchecker.in/</loc>
+    <priority>1.00</priority>
   </url>
 
-  <!-- Privacy Policy -->
   <url>
-    <loc>https://speedchecker.in/PRIVACY_POLICY.md</loc>
-    <lastmod>2026-06-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://speedchecker.in/about-us</loc>
+    <priority>0.80</priority>
   </url>
 
-  <!-- Terms of Service -->
   <url>
-    <loc>https://speedchecker.in/TERMS_OF_SERVICE.md</loc>
-    <lastmod>2026-06-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://speedchecker.in/blog</loc>
+    <priority>0.90</priority>
   </url>
 
-  <!-- Disclaimer -->
   <url>
-    <loc>https://speedchecker.in/DISCLAIMER.md</loc>
-    <lastmod>2026-06-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://speedchecker.in/faq</loc>
+    <priority>0.85</priority>
   </url>
 
-  <!-- About Us -->
   <url>
-    <loc>https://speedchecker.in/ABOUT_US.md</loc>
-    <lastmod>2026-06-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://speedchecker.in/contact-us</loc>
+    <priority>0.75</priority>
   </url>
 
-  <!-- Cookie Policy -->
   <url>
-    <loc>https://speedchecker.in/COOKIE_POLICY.md</loc>
-    <lastmod>2026-06-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://speedchecker.in/privacy-policy</loc>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://speedchecker.in/terms-of-service</loc>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://speedchecker.in/disclaimer</loc>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://speedchecker.in/cookie-policy</loc>
+    <priority>0.50</priority>
   </url>
 
 </urlset>
