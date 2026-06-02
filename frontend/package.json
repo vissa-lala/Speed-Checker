@@ -15,13 +15,17 @@
     "react-router-dom": "^6.20.0",
     "react-scripts": "^5.0.1",
     "recharts": "^3.8.1",
+    "serve": "^14.2.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "dev": "react-scripts start",
+    "serve": "serve -s build -l 3000",
+    "build": "CI=false react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "audit-fix": "npm audit fix --force"
   },
   "proxy": "http://localhost:5000",
   "engines": {
