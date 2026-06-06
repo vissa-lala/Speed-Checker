@@ -1,115 +1,62 @@
-import { Link } from 'react-router-dom';
-import Footer from '../components/Footer';
+import Layout from '../components/Layout';
 
 export default function PrivacyPolicy() {
   return (
-    <div className="legal-page">
-      <div className="legal-container">
+    <Layout>
+      <main className="legal-container">
         <div className="legal-header">
+          <span className="hero-kicker">Legal</span>
           <h1>Privacy Policy</h1>
-          <p className="last-updated">Last Updated: June 2, 2026</p>
+          <p className="last-updated">Last updated: June 6, 2026</p>
         </div>
-
         <div className="legal-content">
           <section>
-            <h2>1. Information Collection and Use</h2>
+            <h2>Information we collect</h2>
             <p>
-              Speed Checker ("we," "us," "our," or "Company") operates the speedchecker.in website
-              and related services. We collect several different types of information for various
-              purposes to provide and improve our Service to you.
+              Speed Pings may process basic usage data such as browser type, pages visited,
+              approximate location, device information, IP-derived network details and
+              non-identifiable speed test results. If you contact us, we may receive your name,
+              email address and message.
             </p>
           </section>
-
           <section>
-            <h3>Types of Data Collected:</h3>
-            <h4>Personal Data:</h4>
-            <ul>
-              <li>Email address (if you contact us)</li>
-              <li>Name (if you contact us)</li>
-              <li>Contact information (phone, address if provided)</li>
-              <li>Cookies and Usage Data</li>
-            </ul>
-          </section>
-
-          <section>
-            <h4>Usage Data:</h4>
-            <ul>
-              <li>Browser type and version</li>
-              <li>Pages visited and time spent</li>
-              <li>Referral source</li>
-              <li>Device information (type, OS, unique device identifier)</li>
-              <li>IP address (anonymized)</li>
-              <li>Approximate geographic location</li>
-              <li>Speed test results (non-identifiable)</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2>2. Use of Data</h2>
-            <p>Speed Checker uses the collected data for various purposes:</p>
-            <ul>
-              <li>To provide and maintain our Service</li>
-              <li>To notify you about changes to our Service</li>
-              <li>To allow you to participate in interactive features of our Service</li>
-              <li>To provide customer support and respond to your inquiries</li>
-              <li>To gather analysis or valuable information so we can improve our Service</li>
-              <li>To monitor the usage of our Service</li>
-              <li>To detect, prevent and address technical and security issues</li>
-              <li>To provide advertising and marketing content</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2>3. Third-Party Service Providers</h2>
+            <h2>Cookies</h2>
             <p>
-              We may employ third-party companies and individuals to facilitate our Service. These
-              parties have access to your Personal Data only to perform these tasks on our behalf
-              and are obligated not to disclose or use it for any other purpose.
+              We may use cookies or similar technologies to remember preferences, understand website
+              usage and support advertising features. You can control cookies from your browser
+              settings.
             </p>
           </section>
-
           <section>
-            <h2>4. Security of Data</h2>
+            <h2>Google Analytics</h2>
             <p>
-              The security of your data is important to us but remember that no method of
-              transmission over the Internet or method of electronic storage is 100% secure. While
-              we strive to use commercially acceptable means to protect your Personal Data, we
-              cannot guarantee its absolute security.
+              We may use Google Analytics or similar analytics tools to understand traffic, popular
+              pages, device types and general visitor behavior. Analytics information helps us
+              improve the website and content.
             </p>
           </section>
-
           <section>
-            <h2>5. Children's Privacy</h2>
+            <h2>Google AdSense and advertising</h2>
             <p>
-              Our Service does not address anyone under the age of 13. We do not knowingly collect
-              personally identifiable information from children under 13. If we become aware that a
-              child under 13 has provided us with Personal Data, we immediately delete such
-              information from our servers.
+              We may display Google AdSense ads. Google and its partners may use cookies to serve
+              personalized or non-personalized ads based on your visits to this and other websites.
+              You can manage ad personalization through your Google ad settings.
             </p>
           </section>
-
           <section>
-            <h2>6. Contact Us</h2>
-            <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-            <div className="contact-info">
-              <p>
-                <strong>Email:</strong> contact@speedchecker.in
-              </p>
-              <p>
-                <strong>Website:</strong> https://speedchecker.in
-              </p>
-            </div>
+            <h2>User data handling</h2>
+            <p>
+              We do not sell personal information. We use collected information to operate the speed
+              test, improve content, respond to messages, protect the website and understand
+              performance. We keep information only as long as reasonably needed for these purposes.
+            </p>
+          </section>
+          <section>
+            <h2>Contact</h2>
+            <p>For privacy questions, contact us at contact@speedpings.com.</p>
           </section>
         </div>
-
-        <div className="legal-footer">
-          <Link to="/" className="back-link">
-            ← Back to Speed Test
-          </Link>
-        </div>
-
-        <Footer />
-      </div>
-    </div>
+      </main>
+    </Layout>
   );
 }

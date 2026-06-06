@@ -1,56 +1,45 @@
-import { Link } from 'react-router-dom';
-import Footer from '../components/Footer';
+import Layout from '../components/Layout';
 
 export default function ContactUs() {
   return (
-    <div className="legal-page">
-      <div className="legal-container">
-        <div className="legal-header">
-          <h1>Contact Us</h1>
-          <p className="subtitle">
-            Contact SpeedChecker for support, feedback, privacy, or advertising questions.
+    <Layout>
+      <main className="page-hero split-page">
+        <section className="page-title left">
+          <span className="hero-kicker">Contact us</span>
+          <h1>Need help with Speed Pings?</h1>
+          <p>
+            Send feedback, report issues, or contact us about privacy, content, advertising, or
+            website improvements.
           </p>
-        </div>
-
-        <div className="legal-content">
-          <section>
-            <h2>Get in Touch</h2>
-            <p>
-              If you have questions about SpeedChecker, speed test results, website feedback,
-              privacy, cookies, advertising, or technical issues, contact us by email.
+          <div className="info-card">
+            <strong>Email</strong>
+            <p>contact@speedpings.com</p>
+          </div>
+        </section>
+        <section className="contact-card">
+          <form onSubmit={(e) => e.preventDefault()}>
+            <label>
+              Name
+              <input type="text" placeholder="Your name" />
+            </label>
+            <label>
+              Email
+              <input type="email" placeholder="your@email.com" />
+            </label>
+            <label>
+              Message
+              <textarea rows="6" placeholder="Write your message" />
+            </label>
+            <button className="run-btn" type="submit">
+              Submit Message
+            </button>
+            <p className="form-note">
+              This frontend form is ready for UI. Connect it to EmailJS, Formspree, Netlify Forms,
+              or your Node.js backend before production.
             </p>
-
-            <div className="contact-info">
-              <p>
-                <strong>Email:</strong> contact@speedchecker.in
-              </p>
-              <p>
-                <strong>Website:</strong> https://speedchecker.in
-              </p>
-              <p>
-                <strong>Response Time:</strong> Usually within 2–7 business days
-              </p>
-            </div>
-          </section>
-
-          <section>
-            <h2>Before Contacting Us</h2>
-            <p>
-              Speed test results may differ between tools because each service can use different
-              servers, locations, and testing methods. For best results, test with Ethernet, close
-              background apps, and run multiple tests.
-            </p>
-          </section>
-        </div>
-
-        <div className="legal-footer">
-          <Link to="/" className="back-link">
-            ← Back to Speed Test
-          </Link>
-        </div>
-
-        <Footer />
-      </div>
-    </div>
+          </form>
+        </section>
+      </main>
+    </Layout>
   );
 }

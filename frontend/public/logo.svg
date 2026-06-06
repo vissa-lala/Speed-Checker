@@ -1,0 +1,11 @@
+<svg width="360" height="96" viewBox="0 0 360 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="360" height="96" rx="28" fill="#08111F"/>
+  <circle cx="54" cy="48" r="34" fill="url(#g1)"/>
+  <path d="M35 54c9-12 29-12 38 0" stroke="white" stroke-width="5" stroke-linecap="round"/>
+  <path d="M43 62c5-6 17-6 22 0" stroke="white" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="54" cy="71" r="4" fill="white"/>
+  <path d="M62 25L50 48h12l-9 24 23-32H63l8-15h-9z" fill="#FFF8B8"/>
+  <text x="104" y="43" font-family="Inter, Arial, sans-serif" font-weight="900" font-size="28" fill="#F8FAFC">Speed</text>
+  <text x="104" y="72" font-family="Inter, Arial, sans-serif" font-weight="900" font-size="28" fill="#38BDF8">Pings</text>
+  <defs><linearGradient id="g1" x1="20" y1="14" x2="88" y2="82" gradientUnits="userSpaceOnUse"><stop stop-color="#06B6D4"/><stop offset=".5" stop-color="#22C55E"/><stop offset="1" stop-color="#8B5CF6"/></linearGradient></defs>
+</svg>
