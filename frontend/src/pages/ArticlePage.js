@@ -12,7 +12,7 @@ export default function ArticlePage() {
         <article className="legal-container article-detail">
           <div className="article-visual big"><img src={article.image} alt={article.title} /></div>
           <div className="legal-header">
-            <p className="hero-kicker">Speed Pings Guide</p>
+            <p className="hero-kicker">Speed Pings Blog</p>
             <h1>{article.title}</h1>
             <p className="subtitle">{article.description}</p>
           </div>
@@ -24,9 +24,9 @@ export default function ArticlePage() {
               </section>
             ))}
             <section className="cta-panel">
-              <h2>Check your current connection</h2>
-              <p>Run a fresh test to compare your download speed, upload speed, ping and jitter with the recommendations in this guide.</p>
-              <Link to="/" className="primary-link">Start speed test</Link>
+              <h2>Ready to test your connection?</h2>
+              <p>Go back to the home page to check your download speed, upload speed, ping and jitter.</p>
+              <Link to="/#site-header" className="primary-link">Back to Home</Link>
             </section>
           </div>
         </article>

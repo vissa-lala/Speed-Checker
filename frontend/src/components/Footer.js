@@ -24,7 +24,7 @@ function Footer() {
           <Link to="/cookie-policy">Cookie Policy</Link>
         </div>
         <div>
-          <h4>Popular Guides</h4>
+          <h4>Popular Blog Posts</h4>
           {articles.slice(0, 5).map((article) => (
             <Link key={article.slug} to={`/blog/${article.slug}`}>{article.title}</Link>
           ))}

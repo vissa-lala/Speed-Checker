@@ -7,9 +7,9 @@ export default function Blog() {
     <Layout>
       <main className="page-hero">
         <section className="page-title">
-          <span className="hero-kicker">Internet speed guides</span>
-          <h1>Learn how to read and improve your internet speed</h1>
-          <p>Simple SEO-friendly guides about download speed, upload speed, ping, jitter, WiFi performance, streaming, gaming, and broadband quality.</p>
+          <span className="hero-kicker">Speed Pings Blog</span>
+          <h1>Internet Speed Test Blog</h1>
+          <p>Helpful blog posts about download speed, upload speed, ping, jitter, WiFi performance, streaming, gaming, and broadband quality.</p>
         </section>
         <section className="article-grid">
           {articles.map((article) => (
@@ -17,7 +17,7 @@ export default function Blog() {
               <div className="article-visual"><img src={article.image} alt={article.title} loading="lazy" /></div>
               <h2>{article.title}</h2>
               <p>{article.description}</p>
-              <strong>Read guide →</strong>
+              <strong>Read blog →</strong>
             </Link>
           ))}
         </section>

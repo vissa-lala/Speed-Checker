@@ -3,13 +3,13 @@ import { Link, NavLink } from 'react-router-dom';
 
 const navItems = [
   { to: '/', label: 'Home' },
-  { to: '/blog', label: 'Guides' },
+  { to: '/blog', label: 'Blog' },
   { to: '/faq', label: 'FAQ' },
   { to: '/about-us', label: 'About' },
   { to: '/contact-us', label: 'Contact' },
 ];
 
-export default function Header({ onStartTest, testing = false, showAction = false }) {
+export default function Header({ onStartTest, testing = false, paused = false, showAction = false }) {
   const [open, setOpen] = useState(false);
 
   const closeMenu = () => setOpen(false);
@@ -17,7 +17,7 @@ export default function Header({ onStartTest, testing = false, showAction = fals
   return (
     <header className="topbar" id="site-header">
       <Link to="/" className="brand" onClick={closeMenu} aria-label="Speed Pings Home">
-        <img src="/logo.svg" alt="Speed Pings logo" className="brand-logo" />
+        <img src="/logo.png" alt="Speed Pings logo" className="brand-logo" />
         <span className="brand-text">Speed Pings</span>
       </Link>
 
@@ -48,8 +48,8 @@ export default function Header({ onStartTest, testing = false, showAction = fals
       </nav>
 
       {showAction && (
-        <button className="run-btn header-action" onClick={onStartTest} disabled={testing}>
-          {testing ? 'Testing...' : 'Start Test'}
+        <button className={`run-btn header-action ${testing ? 'pause-mode' : ''}`} onClick={onStartTest}>
+          {testing ? 'Pause' : paused ? 'Restart' : 'Start'}
         </button>
       )}
     </header>
