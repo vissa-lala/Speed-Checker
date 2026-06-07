@@ -31,7 +31,7 @@ export default function TermsOfService() {
             <h2>Independent service</h2>
             <p>
               Speed Pings is an independent internet speed testing and network information website.
-              We are not affiliated with Ookla, Speedtest.net, Fast.com, Netflix, internet service
+              We are not affiliated with any speed checking sites, internet service
               providers, device manufacturers or telecom companies unless clearly stated.
             </p>
           </section>

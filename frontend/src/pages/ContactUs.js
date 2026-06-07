@@ -129,8 +129,7 @@ export default function ContactUs() {
               role="status"
               aria-live="polite"
             >
-              {feedback ||
-                'Your message will be delivered to contact@speedpings.com and may be processed by our email/form delivery provider.'}
+              {feedback || 'Your message will be delivered to contact@speedpings.com.'}
             </p>
           </form>
         </section>
