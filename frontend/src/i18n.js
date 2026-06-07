@@ -1,0 +1,43 @@
+export const copy = {
+  start: 'Start',
+  pause: 'Pause',
+  restart: 'Restart',
+  completed: 'Completed',
+  ready: 'Ready to test',
+  testingPercent: 'testing',
+  statusTesting: 'Testing your internet connection... Click Pause to stop.',
+  statusPaused: 'Test paused. Click Restart to test again.',
+  statusReady: 'Click start button to test your internet speed',
+  download: 'Download',
+  upload: 'Upload',
+  ping: 'Ping',
+  jitter: 'Jitter',
+  networkDetails: 'Network Details',
+  isp: 'ISP',
+  server: 'Server',
+  location: 'Location',
+  ipAddress: 'IP Address',
+  wifiQuality: 'WiFi Quality',
+  wifiQualityText: 'Check signal strength, speed and stability for home WiFi, mobile hotspot and broadband connections.',
+  streamingReady: 'Streaming Ready',
+  streamingReadyText: 'Understand whether your connection is suitable for HD video, 4K streaming and smart TV playback.',
+  gamingLatency: 'Gaming Latency',
+  gamingLatencyText: 'Measure ping and jitter to understand lag, delay and real-time online gaming performance.',
+  seoTitle: 'Free Internet Speed Test for India, Asia and Worldwide Users',
+  seoIntro: 'Speed Pings is a free internet speed test tool for India and global users. Check download speed, upload speed, ping, jitter and practical network quality on mobile, tablet, laptop or desktop. It is useful for broadband, fiber, WiFi, 4G, 5G, home internet, office internet, gaming, streaming, video calls, online classes, remote work and file downloads.',
+  whatSpeed: 'What is internet speed?',
+  whatSpeedText: 'Internet speed describes how fast data moves between your device and online services. It is normally shown in Mbps, which means megabits per second. A good connection also needs stable latency, low jitter and a reliable WiFi or wired connection.',
+  howWorks: 'How speed testing works',
+  howWorksText: 'A speed test transfers sample data between your browser and a test server, then calculates how much data moved within a measured time. Results can change based on WiFi signal, router quality, background apps, VPN usage, server distance and local ISP congestion.',
+  downloadMeaning: 'Download speed meaning',
+  uploadMeaning: 'Upload speed meaning',
+  pingMeaning: 'Ping meaning',
+  whyDiffer: 'Why results can differ',
+  betterReading: 'How to get a better reading',
+  helpfulGuides: 'Helpful guides',
+  learnMore: 'Learn more about internet speed'
+};
+
+export function useCopy() {
+  return copy;
+}

@@ -7,17 +7,17 @@ export default function Blog() {
     <Layout>
       <main className="page-hero">
         <section className="page-title">
-          <span className="hero-kicker">Speed Pings Blog</span>
-          <h1>Internet Speed Test Blog</h1>
-          <p>Helpful blog posts about download speed, upload speed, ping, jitter, WiFi performance, streaming, gaming, and broadband quality.</p>
+          <span className="hero-kicker">Speed Pings Guides</span>
+          <h1>Internet Speed Test Guides</h1>
+          <p>Helpful guides about download speed, upload speed, ping, jitter, WiFi performance, streaming, gaming and broadband quality.</p>
         </section>
         <section className="article-grid">
           {articles.map((article) => (
-            <Link className="article-card" key={article.slug} to={`/blog/${article.slug}`}>
+            <Link className="article-card" key={article.slug} to={`/guides/${article.slug}`}>
               <div className="article-visual"><img src={article.image} alt={article.title} loading="lazy" /></div>
               <h2>{article.title}</h2>
               <p>{article.description}</p>
-              <strong>Read blog →</strong>
+              <strong>Read guide →</strong>
             </Link>
           ))}
         </section>

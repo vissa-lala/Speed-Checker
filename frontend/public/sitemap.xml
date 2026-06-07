@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://speedchecker.in/</loc></url>
+  <url><loc>https://speedchecker.in/guides</loc></url>
   <url><loc>https://speedchecker.in/about-us</loc></url>
   <url><loc>https://speedchecker.in/contact-us</loc></url>
-  <url><loc>https://speedchecker.in/faq</loc></url>
   <url><loc>https://speedchecker.in/privacy-policy</loc></url>
   <url><loc>https://speedchecker.in/terms-of-service</loc></url>
-  <url><loc>https://speedchecker.in/disclaimer</loc></url>
-  <url><loc>https://speedchecker.in/blog</loc></url>
-  <url><loc>https://speedchecker.in/blog/what-is-internet-speed</loc></url>
-  <url><loc>https://speedchecker.in/blog/what-is-ping</loc></url>
-  <url><loc>https://speedchecker.in/blog/what-is-jitter</loc></url>
-  <url><loc>https://speedchecker.in/blog/what-is-download-speed</loc></url>
-  <url><loc>https://speedchecker.in/blog/what-is-upload-speed</loc></url>
-  <url><loc>https://speedchecker.in/blog/fiber-vs-broadband</loc></url>
-  <url><loc>https://speedchecker.in/blog/how-to-improve-wifi-speed</loc></url>
-  <url><loc>https://speedchecker.in/blog/why-internet-becomes-slow</loc></url>
-  <url><loc>https://speedchecker.in/blog/mbps-vs-mbps-explained</loc></url>
-  <url><loc>https://speedchecker.in/blog/best-internet-speed-for-gaming</loc></url>
-  <url><loc>https://speedchecker.in/blog/best-internet-speed-for-streaming</loc></url>
+  <url><loc>https://speedchecker.in/guides/what-is-internet-speed</loc></url>
+  <url><loc>https://speedchecker.in/guides/what-is-ping</loc></url>
+  <url><loc>https://speedchecker.in/guides/what-is-jitter</loc></url>
+  <url><loc>https://speedchecker.in/guides/what-is-download-speed</loc></url>
+  <url><loc>https://speedchecker.in/guides/what-is-upload-speed</loc></url>
+  <url><loc>https://speedchecker.in/guides/fiber-vs-broadband</loc></url>
+  <url><loc>https://speedchecker.in/guides/how-to-improve-wifi-speed</loc></url>
+  <url><loc>https://speedchecker.in/guides/why-internet-becomes-slow</loc></url>
+  <url><loc>https://speedchecker.in/guides/mbps-vs-mbps-explained</loc></url>
+  <url><loc>https://speedchecker.in/guides/best-internet-speed-for-gaming</loc></url>
+  <url><loc>https://speedchecker.in/guides/best-internet-speed-for-streaming</loc></url>
 </urlset>

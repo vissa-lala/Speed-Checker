@@ -12,7 +12,7 @@ export default function ArticlePage() {
         <article className="legal-container article-detail">
           <div className="article-visual big"><img src={article.image} alt={article.title} /></div>
           <div className="legal-header">
-            <p className="hero-kicker">Speed Pings Blog</p>
+            <p className="hero-kicker">Speed Pings Guides</p>
             <h1>{article.title}</h1>
             <p className="subtitle">{article.description}</p>
           </div>
@@ -26,7 +26,7 @@ export default function ArticlePage() {
             <section className="cta-panel">
               <h2>Ready to test your connection?</h2>
               <p>Go back to the home page to check your download speed, upload speed, ping and jitter.</p>
-              <Link to="/#site-header" className="primary-link">Back to Home</Link>
+              <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="primary-link">Back to Home</Link>
             </section>
           </div>
         </article>

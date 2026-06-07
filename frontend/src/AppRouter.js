@@ -1,26 +1,23 @@
 import { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Navigate, Routes, Route, useLocation } from 'react-router-dom';
 import SpeedChecker from './SpeedChecker';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
-import Disclaimer from './pages/Disclaimer';
 import AboutUs from './pages/AboutUs';
-import CookiePolicy from './pages/CookiePolicy';
 import Blog from './pages/Blog';
 import ArticlePage from './pages/ArticlePage';
-import FAQ from './pages/FAQ';
 import ContactUs from './pages/ContactUs';
-
 
 function ScrollToHash() {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    if (!hash) return;
-    const target = document.querySelector(hash);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (hash) {
+      const target = document.querySelector(hash);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
     }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [pathname, hash]);
 
   return null;
@@ -32,15 +29,15 @@ function App() {
       <ScrollToHash />
       <Routes>
         <Route path="/" element={<SpeedChecker />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/:slug" element={<ArticlePage />} />
-        <Route path="/faq" element={<FAQ />} />
+        <Route path="/guides" element={<Blog />} />
+        <Route path="/guides/:slug" element={<ArticlePage />} />
+        <Route path="/blog" element={<Navigate to="/guides" replace />} />
+        <Route path="/blog/:slug" element={<Navigate to="/guides" replace />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
-        <Route path="/disclaimer" element={<Disclaimer />} />
         <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/cookie-policy" element={<CookiePolicy />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );

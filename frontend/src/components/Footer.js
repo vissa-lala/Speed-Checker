@@ -1,36 +1,59 @@
 import { Link } from 'react-router-dom';
 import { articles } from '../content';
 
+const scrollTop = () => {
+  window.setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 0);
+};
+
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer-grid">
         <div>
-          <h3>⚡ Speed Pings</h3>
-          <p>Free internet speed test for download speed, upload speed, ping, jitter and practical network quality checks.</p>
+          <Link to="/" onClick={scrollTop} className="footer-brand" aria-label="Speed Pings Home">
+            <img src="/logo-wide.png" alt="Speed Pings logo" />
+          </Link>
+          <p>
+            Free internet speed test for download speed, upload speed, ping, jitter and practical
+            network quality checks. Speed Pings is an independent network performance platform.
+          </p>
         </div>
         <div>
           <h4>Pages</h4>
-          <Link to="/">Home</Link>
-          <Link to="/about-us">About Us</Link>
-          <Link to="/contact-us">Contact Us</Link>
-          <Link to="/faq">FAQ</Link>
+          <Link to="/" onClick={scrollTop}>
+            Home
+          </Link>
+          <Link to="/guides" onClick={scrollTop}>
+            Guides
+          </Link>
+          <Link to="/about-us" onClick={scrollTop}>
+            About Us
+          </Link>
+          <Link to="/contact-us" onClick={scrollTop}>
+            Contact Us
+          </Link>
         </div>
         <div>
           <h4>Legal</h4>
-          <Link to="/privacy-policy">Privacy Policy</Link>
-          <Link to="/terms-of-service">Terms & Conditions</Link>
-          <Link to="/disclaimer">Disclaimer</Link>
-          <Link to="/cookie-policy">Cookie Policy</Link>
+          <Link to="/privacy-policy" onClick={scrollTop}>
+            Privacy Policy
+          </Link>
+          <Link to="/terms-of-service" onClick={scrollTop}>
+            Terms & Conditions
+          </Link>
         </div>
         <div>
-          <h4>Popular Blog Posts</h4>
+          <h4>Popular Guides</h4>
           {articles.slice(0, 5).map((article) => (
-            <Link key={article.slug} to={`/blog/${article.slug}`}>{article.title}</Link>
+            <Link key={article.slug} to={`/guides/${article.slug}`} onClick={scrollTop}>
+              {article.title}
+            </Link>
           ))}
         </div>
       </div>
-      <div className="footer-copy">© {new Date().getFullYear()} Speed Pings. All rights reserved.</div>
+      <div className="footer-copy">
+        © {new Date().getFullYear()} Speed Pings. All rights reserved.
+      </div>
     </footer>
   );
 }

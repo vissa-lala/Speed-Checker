@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import BackToTop from './components/BackToTop';
 import { articles } from './content';
+import { useCopy } from './i18n';
 
 function SpeedChecker() {
   const testRef = useRef(null);
@@ -19,6 +20,7 @@ function SpeedChecker() {
   const [testing, setTesting] = useState(false);
   const [paused, setPaused] = useState(false);
   const [progress, setProgress] = useState(0);
+  const copy = useCopy();
 
   const [network, setNetwork] = useState({
     isp: 'Detecting...',
@@ -208,7 +210,7 @@ function SpeedChecker() {
   return (
     <div className="speed-page">
       <div className="speed-app">
-        <Header onStartTest={runTest} testing={testing} paused={paused} showAction />
+        <Header />
 
         <main>
           <section className="hero-section">
@@ -225,69 +227,69 @@ function SpeedChecker() {
             >
               <span className="progress-label">
                 {progress >= 100
-                  ? 'Completed'
+                  ? copy.completed
                   : testing
-                    ? `${Math.round(progress)}% testing`
-                    : 'Ready to test'}
+                    ? `${Math.round(progress)}% ${copy.testingPercent}`
+                    : copy.ready}
               </span>
             </div>
 
             <p className="status-text">
-              {testing
-                ? 'Testing your internet connection... Click Pause to stop.'
-                : paused
-                  ? 'Test paused. Click Restart to test again.'
-                  : 'Click start button to test your internet speed'}
+              {testing ? copy.statusTesting : paused ? copy.statusPaused : copy.statusReady}
             </p>
+
+            <button className={`run-btn hero-action ${testing ? 'pause-mode' : ''}`} onClick={runTest}>
+              {testing ? copy.pause : paused ? copy.restart : copy.start}
+            </button>
           </section>
 
           <section className="cards">
             <div className="card">
               <Download size={22} />
-              <p>Download</p>
+              <p>{copy.download}</p>
               <h3>{download} Mbps</h3>
             </div>
 
             <div className="card">
               <Upload size={22} />
-              <p>Upload</p>
+              <p>{copy.upload}</p>
               <h3>{upload} Mbps</h3>
             </div>
 
             <div className="card">
               <Activity size={22} />
-              <p>Ping</p>
+              <p>{copy.ping}</p>
               <h3>{ping} ms</h3>
             </div>
 
             <div className="card">
               <Gauge size={22} />
-              <p>Jitter</p>
+              <p>{copy.jitter}</p>
               <h3>{jitter} ms</h3>
             </div>
           </section>
 
           <section className="network-box">
-            <h2>Network Details</h2>
+            <h2>{copy.networkDetails}</h2>
 
             <div className="network-grid">
               <div>
-                <span>ISP</span>
+                <span>{copy.isp}</span>
                 <strong>{network.isp}</strong>
               </div>
 
               <div>
-                <span>Server</span>
+                <span>{copy.server}</span>
                 <strong>{network.server}</strong>
               </div>
 
               <div>
-                <span>Location</span>
+                <span>{copy.location}</span>
                 <strong>{network.location}</strong>
               </div>
 
               <div>
-                <span>IP Address</span>
+                <span>{copy.ipAddress}</span>
                 <strong>{network.ip}</strong>
               </div>
             </div>
@@ -296,59 +298,37 @@ function SpeedChecker() {
           <section className="visual-strip">
             <div className="visual-card wifi-art">
               <Wifi size={34} />
-              <h3>WiFi Quality</h3>
-              <p>Check signal, speed and stability.</p>
+              <h3>{copy.wifiQuality}</h3>
+              <p>{copy.wifiQualityText}</p>
             </div>
             <div className="visual-card stream-art">
               <RadioTower size={34} />
-              <h3>Streaming Ready</h3>
-              <p>Understand HD and 4K performance.</p>
+              <h3>{copy.streamingReady}</h3>
+              <p>{copy.streamingReadyText}</p>
             </div>
             <div className="visual-card game-art">
               <Gamepad2 size={34} />
-              <h3>Gaming Latency</h3>
-              <p>Measure ping and jitter for lag.</p>
+              <h3>{copy.gamingLatency}</h3>
+              <p>{copy.gamingLatencyText}</p>
             </div>
           </section>
 
           <section className="seo-box long-content">
-            <h1>Free Internet Speed Test for Home, Work, Gaming and Streaming</h1>
-            <p>
-              Speed Pings is a free internet speed test tool that helps you measure download speed,
-              upload speed, ping, jitter and basic network quality from your browser. You can use it
-              on mobile, tablet, laptop or desktop to understand whether your connection is suitable
-              for browsing, video calls, streaming, online gaming, file downloads and work from
-              home. The result gives a practical view of your current connection at the time of
-              testing.
-            </p>
+            <h1>{copy.seoTitle}</h1>
+            <p>{copy.seoIntro}</p>
 
-            <h2>What is internet speed?</h2>
-            <p>
-              Internet speed describes how fast data moves between your device and the online
-              services you use. It is normally shown in Mbps, which means megabits per second. A
-              higher Mbps number allows more data to move every second, so websites can load faster,
-              videos can stream at higher quality and large files can download more quickly.
-              However, speed is not only one number. A good internet connection also needs stable
-              latency, low jitter and a reliable WiFi or wired connection. That is why Speed Pings
-              shows download speed, upload speed, ping and jitter together instead of focusing only
-              on one result.
-            </p>
 
-            <h2>How speed testing works</h2>
-            <p>
-              A speed test transfers sample data between your browser and a test server, then
-              calculates how much data moved within a measured time. During the download test, your
-              device receives data to estimate how quickly it can pull information from the
-              internet. During the upload test, your device sends data to estimate how quickly it
-              can share information online. The ping test checks how long a small request takes to
-              travel to the server and return. Jitter checks how stable that latency is during the
-              test. Results can change based on WiFi signal, router quality, device performance,
-              background apps, VPN usage, server distance and local ISP congestion.
-            </p>
+            <h2>{copy.whatSpeed}</h2>
+            <p>{copy.whatSpeedText}</p>
+
+
+            <h2>{copy.howWorks}</h2>
+            <p>{copy.howWorksText}</p>
+
 
             <div className="content-grid">
               <article>
-                <h2>Download speed meaning</h2>
+                <h2>{copy.downloadMeaning}</h2>
                 <p>
                   Download speed measures how fast your device receives data from the internet. It
                   affects website loading, video streaming, app downloads, game updates, cloud file
@@ -359,7 +339,7 @@ function SpeedChecker() {
                 </p>
               </article>
               <article>
-                <h2>Upload speed meaning</h2>
+                <h2>{copy.uploadMeaning}</h2>
                 <p>
                   Upload speed measures how fast your device sends data to the internet. It matters
                   for video calls, sending attachments, uploading videos, cloud backup, live
@@ -369,7 +349,7 @@ function SpeedChecker() {
                 </p>
               </article>
               <article>
-                <h2>Ping meaning</h2>
+                <h2>{copy.pingMeaning}</h2>
                 <p>
                   Ping is the response time of your connection, measured in milliseconds. Lower ping
                   means your device gets a faster reply from the server. Ping is very important for
@@ -379,7 +359,7 @@ function SpeedChecker() {
                 </p>
               </article>
               <article>
-                <h2>Why results can differ</h2>
+                <h2>{copy.whyDiffer}</h2>
                 <p>
                   Your internet provider may advertise the maximum plan speed, but your real result
                   can be lower because of WiFi distance, router limitations, old cables, many
@@ -390,7 +370,7 @@ function SpeedChecker() {
               </article>
             </div>
 
-            <h2>How to get a better reading</h2>
+            <h2>{copy.betterReading}</h2>
             <p>
               For the most accurate result, connect through Ethernet when possible or stand close to
               your WiFi router. Pause downloads, cloud backups, video streaming and large uploads
@@ -404,12 +384,12 @@ function SpeedChecker() {
 
           <section className="guide-preview">
             <div className="section-heading">
-              <span className="hero-kicker">Helpful guides</span>
-              <h2>Learn more about internet speed</h2>
+              <span className="hero-kicker">{copy.helpfulGuides}</span>
+              <h2>{copy.learnMore}</h2>
             </div>
             <div className="article-grid compact">
               {articles.slice(0, 6).map((article) => (
-                <Link className="article-card" key={article.slug} to={`/blog/${article.slug}`}>
+                <Link className="article-card" key={article.slug} to={`/guides/${article.slug}`}>
                   <div className="article-visual">
                     <img src={article.image} alt={article.title} loading="lazy" />
                   </div>

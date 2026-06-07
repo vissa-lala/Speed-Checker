@@ -1590,3 +1590,392 @@ main {
     width: min(320px, 100%);
   }
 }
+
+/* Final dark-mode polish requested */
+:root {
+  --bg: #050915;
+  --panel: rgba(11, 18, 32, 0.84);
+  --panel-strong: rgba(15, 23, 42, 0.9);
+  --border: rgba(125, 211, 252, 0.18);
+  --text: #f8fafc;
+  --muted: #a8b3c7;
+  --soft: #d8e3f2;
+  --cyan: #22d3ee;
+  --purple: #a78bfa;
+  --green: #34d399;
+  --orange: #fb7185;
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+}
+
+.speed-page {
+  background:
+    radial-gradient(circle at 18% 12%, rgba(34, 211, 238, 0.22), transparent 27%),
+    radial-gradient(circle at 82% 10%, rgba(167, 139, 250, 0.22), transparent 30%),
+    radial-gradient(circle at 52% 92%, rgba(52, 211, 153, 0.13), transparent 32%),
+    linear-gradient(145deg, #050915 0%, #081224 48%, #050915 100%);
+}
+
+.speed-page::before {
+  background-image:
+    linear-gradient(rgba(125, 211, 252, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(125, 211, 252, 0.035) 1px, transparent 1px);
+  background-size: 52px 52px;
+}
+
+.speed-app {
+  width: min(1280px, 100%);
+  padding: clamp(10px, 1.6vw, 22px);
+}
+
+.topbar {
+  grid-template-columns: auto 1fr auto;
+  gap: 14px;
+  padding: 11px 14px;
+  border-radius: 22px;
+  background: rgba(6, 12, 25, 0.82);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+}
+
+.brand-logo {
+  width: 48px;
+  height: 48px;
+}
+
+.brand-text {
+  background: linear-gradient(90deg, #ffffff, #67e8f9 48%, #c4b5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.hero-section {
+  min-height: clamp(270px, 39vh, 360px);
+  padding: clamp(22px, 3.5vw, 42px) clamp(14px, 3vw, 30px);
+  margin-top: 14px;
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 22% 28%, rgba(34, 211, 238, 0.22), transparent 30%),
+    radial-gradient(circle at 77% 32%, rgba(167, 139, 250, 0.2), transparent 34%),
+    linear-gradient(140deg, rgba(255, 255, 255, 0.105), rgba(255, 255, 255, 0.035));
+}
+
+.hero-section::before {
+  right: 6%;
+  top: 11%;
+  width: min(220px, 30vw);
+  opacity: 0.26;
+  background:
+    radial-gradient(circle at 50% 70%, #fff 0 4px, transparent 5px),
+    repeating-radial-gradient(circle at 50% 70%, transparent 0 28px, rgba(255,255,255,.45) 29px 32px),
+    linear-gradient(145deg, rgba(34, 211, 238, .9), rgba(167, 139, 250, .68));
+}
+
+.speed-value {
+  font-size: clamp(68px, 10.5vw, 128px);
+}
+
+.neon-ring {
+  width: min(560px, 86vw);
+  height: 16px;
+  margin-top: 18px;
+}
+
+.status-text {
+  margin-top: 13px;
+  max-width: 760px;
+}
+
+.hero-action {
+  margin-top: 14px;
+  min-width: 190px;
+  min-height: 52px;
+  font-size: 16px;
+}
+
+.run-btn.pause-mode {
+  background: linear-gradient(135deg, #fb7185, #f97316);
+  box-shadow: 0 18px 40px rgba(251, 113, 133, 0.26);
+}
+
+.language-note {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.cards {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.card {
+  min-height: 92px;
+  padding: 15px;
+  border-radius: 22px;
+  background:
+    linear-gradient(155deg, rgba(255,255,255,.14), rgba(255,255,255,.045)),
+    radial-gradient(circle at 90% 10%, rgba(34, 211, 238, 0.18), transparent 32%);
+}
+
+.card svg {
+  margin-bottom: 8px;
+}
+
+.card p {
+  margin-bottom: 5px;
+}
+
+.card h3 {
+  font-size: clamp(18px, 1.7vw, 23px);
+}
+
+.network-box {
+  margin-top: 12px;
+  padding: clamp(15px, 1.8vw, 22px);
+}
+
+.network-grid div {
+  min-height: 72px;
+  padding: 13px;
+}
+
+.visual-card.wifi-art::after,
+.visual-card.stream-art::after,
+.visual-card.game-art::after {
+  content: '';
+  position: absolute;
+  right: -28px;
+  bottom: -38px;
+  width: 150px;
+  height: 150px;
+  border-radius: 42px;
+  opacity: .7;
+  transform: rotate(18deg);
+}
+
+.visual-card.wifi-art::after {
+  background: repeating-radial-gradient(circle, rgba(34,211,238,.42) 0 4px, transparent 5px 18px);
+}
+.visual-card.stream-art::after {
+  background: conic-gradient(from 90deg, rgba(167,139,250,.5), rgba(34,211,238,.22), rgba(52,211,153,.35), rgba(167,139,250,.5));
+}
+.visual-card.game-art::after {
+  background: linear-gradient(135deg, rgba(251,113,133,.48), rgba(167,139,250,.3));
+  border-radius: 999px 999px 48px 48px;
+}
+
+@media (min-width: 921px) and (max-height: 860px) {
+  .hero-section {
+    min-height: 250px;
+    padding-top: 22px;
+    padding-bottom: 20px;
+  }
+  .speed-value {
+    font-size: clamp(62px, 9vw, 108px);
+  }
+  .speed-unit {
+    margin-top: 4px;
+  }
+  .neon-ring {
+    margin-top: 14px;
+  }
+  .hero-action {
+    min-height: 46px;
+  }
+  .cards {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 920px) {
+  .topbar {
+    grid-template-columns: auto auto;
+  }
+  .topnav.nav-open {
+    grid-column: 1 / -1;
+  }
+  .cards,
+  .network-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .hero-section {
+    min-height: 330px;
+  }
+}
+
+@media (max-width: 560px) {
+  .cards,
+  .network-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-action {
+    width: min(320px, 100%);
+  }
+}
+
+/* Final cleanup: reliable English-only UI, single-image logo, footer logo, and desktop fit */
+.topbar {
+  grid-template-columns: auto 1fr;
+}
+.brand {
+  min-width: 0;
+}
+.brand-logo,
+.brand-text,
+.language-note {
+  display: none !important;
+}
+.brand-logo-wide {
+  display: block;
+  width: clamp(190px, 22vw, 270px);
+  height: auto;
+  border-radius: 16px;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 28px rgba(34, 211, 238, 0.2));
+}
+.topnav {
+  justify-self: end;
+}
+.hero-action {
+  background: linear-gradient(135deg, #22d3ee, #a78bfa);
+}
+.run-btn.pause-mode {
+  background: linear-gradient(135deg, #a78bfa, #fb7185);
+  box-shadow: 0 18px 42px rgba(167, 139, 250, 0.28);
+}
+.footer-brand {
+  display: inline-block !important;
+  margin: 0 0 16px !important;
+}
+.footer-brand img {
+  width: min(260px, 100%);
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  filter: drop-shadow(0 12px 28px rgba(34, 211, 238, 0.16));
+}
+.article-visual {
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.08), 0 18px 38px rgba(0,0,0,.24);
+}
+.article-card .article-visual::after,
+.article-detail .article-visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 35%, rgba(2,6,23,.18));
+  z-index: 2;
+  pointer-events: none;
+}
+@media (min-width: 921px) {
+  .topbar {
+    min-height: 76px;
+  }
+  .hero-section {
+    min-height: clamp(245px, 36vh, 330px);
+  }
+  .cards {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .network-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (max-width: 920px) {
+  .topbar {
+    grid-template-columns: 1fr auto;
+  }
+  .brand-logo-wide {
+    width: min(230px, 64vw);
+  }
+  .topnav {
+    justify-self: stretch;
+  }
+  .topnav.nav-open {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 560px) {
+  .brand-logo-wide {
+    width: min(205px, 66vw);
+  }
+}
+
+/* Contact form email submission states */
+.contact-submit-btn.sent-mode {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.14) inset,
+    0 18px 42px rgba(34, 197, 94, 0.28);
+}
+
+.form-note.success-note {
+  color: #86efac;
+}
+
+.form-note.error-note {
+  color: #fecaca;
+}
+
+/* Final brand color-only update: match new Speed Pings logo and reference UI */
+:root {
+  --bg: #031225;
+  --panel: rgba(7, 26, 50, 0.84);
+  --panel-strong: rgba(7, 26, 50, 0.95);
+  --border: rgba(33, 212, 253, 0.18);
+  --text: #f8fafc;
+  --muted: #9fb2c8;
+  --soft: #d7e6f5;
+  --cyan: #21D4FD;
+  --purple: #1E88FF;
+  --green: #21D07A;
+  --orange: #f59e0b;
+  --shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
+}
+
+.speed-page {
+  background:
+    radial-gradient(circle at 10% 10%, rgba(33, 212, 253, 0.18), transparent 25%),
+    radial-gradient(circle at 90% 0%, rgba(30, 136, 255, 0.18), transparent 25%),
+    radial-gradient(circle at 70% 92%, rgba(33, 208, 122, 0.12), transparent 32%),
+    linear-gradient(180deg, #031225 0%, #051B36 50%, #031225 100%);
+}
+
+.topbar,
+.footer,
+.article-card,
+.info-card,
+.stat-card,
+.metric-card,
+.contact-panel,
+.content-card,
+.faq-item,
+.network-card {
+  border-color: rgba(33, 212, 253, 0.18);
+  background-color: rgba(7, 26, 50, 0.82);
+}
+
+.nav-link.active,
+.nav-link:hover,
+.hero-action,
+.hero-start-btn,
+.run-btn,
+.contact-submit-btn {
+  background: linear-gradient(135deg, #1E88FF, #21D4FD 52%, #21D07A);
+}
+
+.run-btn.pause-mode {
+  background: linear-gradient(135deg, #0f766e, #1E88FF);
+  box-shadow: 0 18px 42px rgba(33, 212, 253, 0.28);
+}
+
+.brand-logo-wide,
+.footer-brand img {
+  filter: drop-shadow(0 12px 28px rgba(33, 212, 253, 0.22));
+}
+
+.article-card:hover,
+.network-card:hover,
+.info-card:hover {
+  box-shadow: 0 18px 42px rgba(33, 212, 253, 0.16);
+}
