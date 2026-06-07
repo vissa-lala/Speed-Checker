@@ -9,7 +9,7 @@ import BackToTop from './components/BackToTop';
 import { articles } from './content';
 import { useCopy } from './i18n';
 
-function SpeedChecker() {
+function SpeedPings() {
   const testRef = useRef(null);
   const testRunIdRef = useRef(0);
 
@@ -238,7 +238,10 @@ function SpeedChecker() {
               {testing ? copy.statusTesting : paused ? copy.statusPaused : copy.statusReady}
             </p>
 
-            <button className={`run-btn hero-action ${testing ? 'pause-mode' : ''}`} onClick={runTest}>
+            <button
+              className={`run-btn hero-action ${testing ? 'pause-mode' : ''}`}
+              onClick={runTest}
+            >
               {testing ? copy.pause : paused ? copy.restart : copy.start}
             </button>
           </section>
@@ -317,14 +320,11 @@ function SpeedChecker() {
             <h1>{copy.seoTitle}</h1>
             <p>{copy.seoIntro}</p>
 
-
             <h2>{copy.whatSpeed}</h2>
             <p>{copy.whatSpeedText}</p>
 
-
             <h2>{copy.howWorks}</h2>
             <p>{copy.howWorksText}</p>
-
 
             <div className="content-grid">
               <article>
@@ -407,4 +407,4 @@ function SpeedChecker() {
   );
 }
 
-export default SpeedChecker;
+export default SpeedPings;

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Navigate, Routes, Route, useLocation } from 'react-router-dom';
-import SpeedChecker from './SpeedChecker';
+import SpeedPings from './SpeedPings';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import AboutUs from './pages/AboutUs';
@@ -28,7 +28,7 @@ function App() {
     <Router>
       <ScrollToHash />
       <Routes>
-        <Route path="/" element={<SpeedChecker />} />
+        <Route path="/" element={<SpeedPings />} />
         <Route path="/guides" element={<Blog />} />
         <Route path="/guides/:slug" element={<ArticlePage />} />
         <Route path="/blog" element={<Navigate to="/guides" replace />} />
