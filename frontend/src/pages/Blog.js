@@ -8,8 +8,8 @@ export default function Blog() {
       <main className="page-hero">
         <section className="page-title">
           <span className="hero-kicker">Speed Pings Guides</span>
-          <h1>Internet Speed Test Guides</h1>
-          <p>Helpful guides about download speed, upload speed, ping, jitter, WiFi performance, streaming, gaming and broadband quality.</p>
+          <h1>Internet Speed Test, WiFi, Ping and Broadband Guides</h1>
+          <p>Helpful guides about internet speed tests, WiFi speed, broadband speed, fiber internet, 4G, 5G, download speed, upload speed, ping, jitter, gaming, streaming and video call quality.</p>
         </section>
         <section className="article-grid">
           {articles.map((article) => (

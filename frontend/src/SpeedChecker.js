@@ -331,21 +331,21 @@ function SpeedPings() {
                 <h2>{copy.downloadMeaning}</h2>
                 <p>
                   Download speed measures how fast your device receives data from the internet. It
-                  affects website loading, video streaming, app downloads, game updates, cloud file
-                  access and social media browsing. For simple browsing, around 10 Mbps can be
-                  enough. For HD streaming, 25 Mbps or more is usually better. For 4K streaming,
-                  large downloads and multiple users, 50 to 100 Mbps or higher gives a smoother
-                  experience.
+                  affects website loading, YouTube and Netflix streaming, app downloads, game
+                  updates, cloud file access, social media browsing and software updates. For simple
+                  browsing, around 10 Mbps can be enough. For HD streaming, 25 Mbps or more is
+                  usually better. For 4K streaming, large downloads and multiple users, 50 to 100
+                  Mbps or higher gives a smoother experience.
                 </p>
               </article>
               <article>
                 <h2>{copy.uploadMeaning}</h2>
                 <p>
                   Upload speed measures how fast your device sends data to the internet. It matters
-                  for video calls, sending attachments, uploading videos, cloud backup, live
-                  streaming and remote work. If your upload speed is low, video calls may become
-                  blurry, file uploads may take longer and cloud sync may slow down other activities
-                  on your network.
+                  for WhatsApp and Zoom video calls, sending attachments, uploading videos, cloud
+                  backup, live streaming, online classes and remote work. If your upload speed is
+                  low, video calls may become blurry, file uploads may take longer and cloud sync
+                  may slow down other activities on your network.
                 </p>
               </article>
               <article>
@@ -353,32 +353,34 @@ function SpeedPings() {
                 <p>
                   Ping is the response time of your connection, measured in milliseconds. Lower ping
                   means your device gets a faster reply from the server. Ping is very important for
-                  online gaming, video meetings, live classes, remote desktop and voice calls. A
-                  ping below 50 ms is good for most users, while lower than 30 ms is excellent for
-                  real-time tasks.
+                  online gaming, video meetings, live classes, remote desktop, voice calls and other
+                  real-time apps. A ping below 50 ms is good for most users, while lower than 30 ms
+                  is excellent for gaming and real-time communication.
                 </p>
               </article>
               <article>
                 <h2>{copy.whyDiffer}</h2>
                 <p>
-                  Your internet provider may advertise the maximum plan speed, but your real result
-                  can be lower because of WiFi distance, router limitations, old cables, many
-                  connected devices, network congestion or background downloads. For best results,
-                  test near your router, close heavy apps, disconnect unnecessary devices and run
-                  multiple tests at different times of the day.
+                  Your internet provider may advertise the maximum plan speed, but your real speed
+                  test result can be lower because of WiFi distance, router limitations, old cables,
+                  many connected devices, network congestion, VPN usage, mobile signal quality or
+                  background downloads. For best results, test near your router, close heavy apps,
+                  disconnect unnecessary devices and run multiple tests at different times of the
+                  day.
                 </p>
               </article>
             </div>
 
             <h2>{copy.betterReading}</h2>
             <p>
-              For the most accurate result, connect through Ethernet when possible or stand close to
-              your WiFi router. Pause downloads, cloud backups, video streaming and large uploads
-              before testing. Run the test two or three times and compare the average. If your WiFi
-              result is much lower than your plan, test again using a wired connection. If wired
-              speed is good but WiFi is poor, your router placement, router age or wireless
-              interference may be the main issue. If both wired and WiFi results are poor for many
-              days, contact your internet provider with screenshots of several tests.
+              For the most accurate internet speed test result, connect through Ethernet when
+              possible or stand close to your WiFi router. Pause downloads, cloud backups, video
+              streaming, VPN apps and large uploads before testing. Run the test two or three times
+              and compare the average. If your WiFi speed test result is much lower than your plan,
+              test again using a wired connection. If wired speed is good but WiFi is poor, your
+              router placement, router age or wireless interference may be the main issue. If both
+              wired and WiFi results are poor for many days, contact your internet provider with
+              screenshots of several tests.
             </p>
           </section>
 

@@ -277,3 +277,11 @@ For issues or improvements:
 2. Test the API directly with cURL
 3. Check browser console for errors
 4. Review network tab in DevTools
+
+## Latest update
+
+- Added stronger SEO title, meta description, keyword phrases, Open Graph and Twitter text for Speed Pings.
+- Added WebSite and FAQPage JSON-LD structured data in `public/index.html`.
+- Improved homepage SEO copy for internet speed test, WiFi speed test, broadband speed test, fiber, 4G, 5G, download speed, upload speed, ping, jitter and latency.
+- Kept existing UI/CSS/components unchanged; only text/SEO content was updated.
+- Kept refresh 404 fix using `public/_redirects`, `render.yaml` rewrite and `vercel.json` rewrite.
