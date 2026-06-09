@@ -6,7 +6,7 @@ import './index.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import BackToTop from './components/BackToTop';
-import { articles } from './content';
+import { articles, faqs } from './content';
 import { useCopy } from './i18n';
 
 function SpeedPings() {
@@ -207,6 +207,61 @@ function SpeedPings() {
     }
   }, [loadNetworkInfo, stopActiveTest, testing]);
 
+  const getSpeedRating = () => {
+    if (progress < 100 && download === 0 && upload === 0 && ping === 0) {
+      return null;
+    }
+
+    const downloadScore =
+      download >= 100 ? 4 : download >= 50 ? 3 : download >= 25 ? 2 : download >= 10 ? 1 : 0;
+    const pingScore =
+      ping === 0 ? 2 : ping <= 30 ? 4 : ping <= 50 ? 3 : ping <= 100 ? 2 : ping <= 150 ? 1 : 0;
+    const jitterScore =
+      jitter === 0
+        ? 2
+        : jitter <= 10
+          ? 4
+          : jitter <= 20
+            ? 3
+            : jitter <= 40
+              ? 2
+              : jitter <= 60
+                ? 1
+                : 0;
+    const totalScore = downloadScore + pingScore + jitterScore;
+
+    const overall =
+      totalScore >= 10
+        ? 'Excellent'
+        : totalScore >= 7
+          ? 'Good'
+          : totalScore >= 4
+            ? 'Average'
+            : 'Poor';
+    const streaming =
+      download >= 50 ? 'Excellent' : download >= 25 ? 'Good' : download >= 10 ? 'Average' : 'Poor';
+    const gaming =
+      ping > 0 && ping <= 50 && jitter <= 20
+        ? 'Excellent'
+        : ping > 0 && ping <= 100
+          ? 'Good'
+          : ping > 0 && ping <= 150
+            ? 'Average'
+            : 'Poor';
+    const videoCalls =
+      upload >= 10 && ping <= 100
+        ? 'Excellent'
+        : upload >= 5
+          ? 'Good'
+          : upload >= 2
+            ? 'Average'
+            : 'Poor';
+
+    return { overall, streaming, gaming, videoCalls };
+  };
+
+  const speedRating = getSpeedRating();
+
   return (
     <div className="speed-page">
       <div className="speed-app">
@@ -271,6 +326,30 @@ function SpeedPings() {
               <h3>{jitter} ms</h3>
             </div>
           </section>
+
+          {speedRating && (
+            <section className="network-box speed-rating-box" aria-label="Internet speed rating">
+              <h2>Speed Rating</h2>
+              <div className="network-grid">
+                <div>
+                  <span>Overall</span>
+                  <strong>{speedRating.overall}</strong>
+                </div>
+                <div>
+                  <span>Streaming</span>
+                  <strong>{speedRating.streaming}</strong>
+                </div>
+                <div>
+                  <span>Gaming</span>
+                  <strong>{speedRating.gaming}</strong>
+                </div>
+                <div>
+                  <span>Video Calls</span>
+                  <strong>{speedRating.videoCalls}</strong>
+                </div>
+              </div>
+            </section>
+          )}
 
           <section className="network-box">
             <h2>{copy.networkDetails}</h2>
