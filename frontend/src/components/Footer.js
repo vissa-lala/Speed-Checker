@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { articles } from '../content';
+import { performancePages } from '../websitePerformanceContent';
 
 const scrollTop = () => {
   window.setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 0);
@@ -26,6 +27,9 @@ function Footer() {
           <Link to="/guides" onClick={scrollTop}>
             Guides
           </Link>
+          <Link to="/website-performance" onClick={scrollTop}>
+            Website Performance
+          </Link>
           <Link to="/about-us" onClick={scrollTop}>
             About Us
           </Link>
@@ -44,9 +48,14 @@ function Footer() {
         </div>
         <div>
           <h4>Popular Guides</h4>
-          {articles.slice(0, 5).map((article) => (
+          {articles.slice(0, 3).map((article) => (
             <Link key={article.slug} to={`/guides/${article.slug}`} onClick={scrollTop}>
               {article.title}
+            </Link>
+          ))}
+          {performancePages.slice(0, 2).map((page) => (
+            <Link key={page.slug} to={`/website-performance/${page.slug}`} onClick={scrollTop}>
+              {page.title}
             </Link>
           ))}
         </div>

@@ -1,0 +1,50 @@
+export const performancePages = [
+  {
+    slug: 'core-web-vitals',
+    title: 'Core Web Vitals Guide',
+    description: 'Learn Core Web Vitals, LCP, CLS and INP in simple words and understand how they affect website speed, user experience and SEO.',
+    icon: '📊',
+    keywords: 'core web vitals test, LCP, CLS, INP, website performance, SEO page experience',
+    sections: [
+      ['What are Core Web Vitals?', 'Core Web Vitals are Google user experience metrics that help website owners understand how fast, stable and responsive a page feels to visitors. The three main metrics are Largest Contentful Paint, Cumulative Layout Shift and Interaction to Next Paint. These metrics are useful for SEO, conversions, bounce rate and overall visitor satisfaction.'],
+      ['LCP, CLS and INP explained', 'LCP checks how quickly the main visible content loads. CLS checks whether the page layout jumps while loading. INP checks how quickly the page responds after a user interaction such as a tap or click. A page can have good internet speed but still feel slow if images, JavaScript, fonts or third-party scripts are not optimized.'],
+      ['How to improve Core Web Vitals', 'Compress images, lazy load below-the-fold media, reduce unused JavaScript, use browser caching, avoid layout shifts, choose a fast hosting provider and test important pages regularly. Focus first on your home page, landing pages, blog posts and pages that receive organic traffic.']
+    ]
+  },
+  {
+    slug: 'google-pagespeed-insights',
+    title: 'Google PageSpeed Insights Guide',
+    description: 'Understand Google PageSpeed Insights scores, lab data, field data, opportunities and practical fixes for better website speed.',
+    icon: '⚡',
+    keywords: 'google pagespeed insights, pagespeed score, website speed audit, mobile page speed',
+    sections: [
+      ['What PageSpeed Insights shows', 'Google PageSpeed Insights analyzes a web page and reports performance issues that may affect loading speed and user experience. It shows mobile and desktop scores, Core Web Vitals, diagnostics and improvement opportunities. The score is not the only thing that matters, but it is a helpful starting point.'],
+      ['Lab data vs field data', 'Lab data is measured in a controlled test environment. Field data comes from real users when enough data is available. If these numbers differ, it usually means real users have different devices, locations, networks and browsers. Use both views to understand actual performance.'],
+      ['Common PageSpeed fixes', 'Reduce large images, remove unused CSS, defer non-critical JavaScript, use modern image formats, improve server response time, enable compression and use a CDN when your audience is spread across regions.']
+    ]
+  },
+  {
+    slug: 'gtmetrix-guide',
+    title: 'GTmetrix Guide for Website Speed',
+    description: 'Learn how to read GTmetrix reports, waterfall charts, performance grades and speed recommendations for your website.',
+    icon: '🧪',
+    keywords: 'gtmetrix, website speed test, waterfall chart, page speed report',
+    sections: [
+      ['What GTmetrix is useful for', 'GTmetrix is useful for understanding why a web page loads slowly. It helps you inspect requests, page size, scripts, images, render-blocking resources and timing details. This is especially helpful for developers, bloggers, marketers and business website owners.'],
+      ['How to read the waterfall chart', 'The waterfall chart shows each file requested by the page and how long it takes. Large images, slow fonts, heavy scripts, ad tags and third-party widgets often stand out clearly. Fixing the largest and slowest requests usually gives the quickest improvement.'],
+      ['What to optimize first', 'Start with images, server response time, caching, unnecessary plugins or scripts, and render-blocking files. Do not chase a perfect score blindly. A fast, stable and useful page is more important than a cosmetic score improvement.']
+    ]
+  },
+  {
+    slug: 'website-speed-optimization',
+    title: 'Website Speed Optimization Checklist',
+    description: 'A practical website speed optimization checklist covering images, caching, CDN, JavaScript, CSS, hosting and mobile performance.',
+    icon: '🚀',
+    keywords: 'website speed optimization, website speed test, page speed checker, mobile website speed test',
+    sections: [
+      ['Start with the biggest files', 'Large images and videos are common reasons for slow pages. Resize images to the display size, compress them, use modern formats where possible and lazy load media that is not immediately visible.'],
+      ['Reduce code and third-party weight', 'Too much JavaScript, unused CSS, tracking scripts, chat widgets, ads and animation libraries can slow down a page. Remove what you do not need and load non-critical scripts later.'],
+      ['Improve delivery and hosting', 'Use browser caching, compression, a reliable hosting provider and a CDN when needed. Test mobile performance separately because many visitors use slower devices and mobile networks.']
+    ]
+  }
+];

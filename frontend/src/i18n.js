@@ -23,8 +23,8 @@ export const copy = {
   streamingReadyText: 'Understand whether your connection is suitable for HD video, 4K streaming and smart TV playback.',
   gamingLatency: 'Gaming Latency',
   gamingLatencyText: 'Measure ping and jitter to understand lag, delay and real-time online gaming performance.',
-  seoTitle: 'Free Internet Speed Test for WiFi, Broadband, Fiber, 4G and 5G',
-  seoIntro: 'Speed Pings is a free internet speed test tool for users in India and worldwide. Use it to check download speed, upload speed, ping, jitter, latency and practical network quality on mobile, tablet, laptop or desktop. It is useful for WiFi speed tests, broadband speed tests, fiber internet checks, 4G and 5G speed tests, home internet, office internet, online gaming, HD and 4K streaming, video calls, online classes, remote work and large file downloads.',
+  seoTitle: 'Free Internet Speed Test',
+  seoIntro: 'Use Speed Pings as a free internet speed test for WiFi speed test, broadband speed test, fiber, 4G and 5G speed test results. Check download speed, upload speed, ping test online, jitter and latency to understand real network quality for browsing, streaming, gaming, video calls, remote work and large downloads.',
   whatSpeed: 'What is internet speed?',
   whatSpeedText: 'Internet speed describes how fast data moves between your device and online services. It is normally shown in Mbps, which means megabits per second. A good connection is not only about download speed. It also needs stable upload speed, low ping, low jitter and a reliable WiFi, broadband, fiber or mobile data connection.',
   howWorks: 'How speed testing works',
@@ -35,7 +35,7 @@ export const copy = {
   whyDiffer: 'Why results can differ',
   betterReading: 'How to get a more accurate internet speed test result',
   helpfulGuides: 'Helpful guides',
-  learnMore: 'Learn more about internet speed, WiFi, ping and jitter'
+  learnMore: 'Learn more about internet speed, WiFi speed, broadband speed, ping test online and jitter'
 };
 
 export function useCopy() {

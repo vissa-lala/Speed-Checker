@@ -377,6 +377,14 @@ function SpeedPings() {
             </div>
           </section>
 
+          <section class="seo-box quick-seo-section">
+            <h1 class="hero-seo-title">Free Internet Speed Test</h1>
+            <p class="hero-seo-subtitle">
+              Check WiFi speed, broadband speed, 5G speed, download, upload, ping test online and
+              jitter in one simple test.
+            </p>
+          </section>
+
           <section className="visual-strip">
             <div className="visual-card wifi-art">
               <Wifi size={34} />
@@ -396,7 +404,7 @@ function SpeedPings() {
           </section>
 
           <section className="seo-box long-content">
-            <h1>{copy.seoTitle}</h1>
+            <h2>{copy.seoTitle}</h2>
             <p>{copy.seoIntro}</p>
 
             <h2>{copy.whatSpeed}</h2>

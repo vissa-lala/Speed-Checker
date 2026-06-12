@@ -1979,3 +1979,38 @@ main {
 .info-card:hover {
   box-shadow: 0 18px 42px rgba(33, 212, 253, 0.16);
 }
+
+.hero-seo-title {
+  margin: 0 0 8px;
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.08;
+  font-weight: 900;
+  text-align: center;
+}
+
+.hero-seo-subtitle {
+  max-width: 760px;
+  margin: 0 auto 16px;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: clamp(14px, 1.8vw, 18px);
+  text-align: center;
+}
+
+/* Website Performance learning section */
+.seo-section {
+  margin: 0 auto 28px;
+}
+
+.performance-icon {
+  display: grid;
+  place-items: center;
+  min-height: 170px;
+  font-size: 64px;
+  background: linear-gradient(135deg, rgba(0, 247, 255, 0.12), rgba(157, 78, 221, 0.16));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.article-visual.big.performance-icon {
+  min-height: 230px;
+  font-size: 86px;
+}
