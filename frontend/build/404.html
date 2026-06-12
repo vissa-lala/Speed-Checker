@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting...</title>
+    <script>
+      // SPA fallback for static hosting: preserve the requested path and redirect to index.html.
+      // Example: /website-performance -> /?/website-performance
+      (function () {
+        var l = window.location;
+        var path = l.pathname + l.search + l.hash;
+        l.replace(l.origin + '/?redirect=' + encodeURIComponent(path));
+      })();
+    </script>
+  </head>
+  <body>
+    Redirecting...
+  </body>
+</html>

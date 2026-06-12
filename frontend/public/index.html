@@ -134,6 +134,17 @@
         ]
       }
     </script>
+  
+    <script>
+      // Restore React Router path after static-host fallback redirect.
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var redirectPath = params.get('redirect');
+        if (redirectPath) {
+          window.history.replaceState(null, '', redirectPath);
+        }
+      })();
+    </script>
   </head>
 
   <body>
