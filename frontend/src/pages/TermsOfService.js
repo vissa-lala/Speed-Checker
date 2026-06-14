@@ -1,8 +1,27 @@
 import Layout from '../components/Layout';
+import SEO from '../components/SEO';
+import { organizationSchema, webPageSchema, breadcrumbSchema } from '../schema';
 
 export default function TermsOfService() {
   return (
     <Layout>
+      <SEO
+        title="Terms of Service | Speed Pings"
+        description="Read the Speed Pings terms of service for using the free internet speed test, guides and website features."
+        path="/terms-of-service"
+        schema={[
+          organizationSchema,
+          webPageSchema({
+            path: '/terms-of-service',
+            title: 'Terms of Service | Speed Pings',
+            description: 'Read the Speed Pings terms of service for using the free internet speed test, guides and website features.',
+          }),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Terms of Service', path: '/terms-of-service' },
+          ]),
+        ]}
+      />
       <main className="legal-container">
         <div className="legal-header">
           <span className="hero-kicker">Legal</span>

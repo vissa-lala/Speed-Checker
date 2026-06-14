@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Navigate, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { BrowserRouter as Router, Navigate, Routes, Route, useLocation } from 'react-router-dom';
 import SpeedChecker from './SpeedChecker';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
@@ -8,10 +9,22 @@ import ArticlePage from './pages/ArticlePage';
 import ContactUs from './pages/ContactUs';
 import WebsitePerformance from './pages/WebsitePerformance';
 import WebsitePerformanceArticle from './pages/WebsitePerformanceArticle';
+import NotFound from './pages/NotFound';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<SpeedChecker />} />
         <Route path="/guides" element={<Blog />} />
@@ -24,7 +37,7 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/about-us" element={<AboutUs />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );

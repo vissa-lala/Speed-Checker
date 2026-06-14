@@ -1,8 +1,28 @@
 import Layout from '../components/Layout';
+import SEO from '../components/SEO';
+import { organizationSchema, webPageSchema, breadcrumbSchema } from '../schema';
 
 export default function AboutUs() {
   return (
     <Layout>
+      <SEO
+        title="About Speed Pings | Internet Speed Test"
+        description="Learn about Speed Pings, a free internet speed test and network education platform for download speed, upload speed, ping, jitter, WiFi and broadband guides."
+        path="/about-us"
+        schema={[
+          organizationSchema,
+          webPageSchema({
+            path: '/about-us',
+            title: 'About Speed Pings | Internet Speed Test',
+            description: 'Learn about Speed Pings, a free internet speed test and network education platform for download speed, upload speed, ping, jitter, WiFi and broadband guides.',
+            type: 'AboutPage',
+          }),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'About Speed Pings', path: '/about-us' },
+          ]),
+        ]}
+      />
       <main className="legal-container">
         <div className="legal-header">
           <span className="hero-kicker">About Speed Pings</span>

@@ -1,19 +1,39 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 import { performancePages } from '../websitePerformanceContent';
+import { organizationSchema, webPageSchema, itemListSchema, breadcrumbSchema } from '../schema';
 
 export default function WebsitePerformance() {
-  useEffect(() => {
-    document.title = 'Website Performance Guides | Speed Pings';
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute('content', 'Learn Core Web Vitals, PageSpeed Insights, GTmetrix and website speed optimization with simple Speed Pings guides.');
-    }
-  }, []);
-
   return (
     <Layout>
+      <SEO
+        title="Website Performance Guides | Speed Pings"
+        description="Learn Core Web Vitals, PageSpeed Insights, GTmetrix and website speed optimization with simple Speed Pings guides."
+        path="/website-performance"
+        schema={[
+          organizationSchema,
+          webPageSchema({
+            path: '/website-performance',
+            title: 'Website Performance Guides | Speed Pings',
+            description: 'Learn Core Web Vitals, PageSpeed Insights, GTmetrix and website speed optimization with simple Speed Pings guides.',
+            type: 'CollectionPage',
+          }),
+          itemListSchema({
+            path: '/website-performance',
+            title: 'Website Performance Guides',
+            description: 'Website speed and Core Web Vitals guide collection.',
+            items: performancePages.map((page) => ({
+              name: page.title,
+              path: `/website-performance/${page.slug}`,
+            })),
+          }),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Website Performance', path: '/website-performance' },
+          ]),
+        ]}
+      />
       <main className="page-hero">
         <section className="page-title">
           <span className="hero-kicker">Website Performance</span>

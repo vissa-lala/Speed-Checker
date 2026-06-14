@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import Layout from '../components/Layout';
+import SEO from '../components/SEO';
+import { organizationSchema, contactPageSchema, breadcrumbSchema } from '../schema';
 
 const CONTACT_EMAIL = 'contact@speedpings.com';
 const FORMSUBMIT_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
@@ -65,6 +67,22 @@ export default function ContactUs() {
 
   return (
     <Layout>
+      <SEO
+        title="Contact Speed Pings"
+        description="Contact Speed Pings for questions about the internet speed test, guides, feedback or website support."
+        path="/contact-us"
+        schema={[
+          organizationSchema,
+          contactPageSchema({
+            title: 'Contact Speed Pings',
+            description: 'Contact Speed Pings for questions about the internet speed test, guides, feedback or website support.',
+          }),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Contact Speed Pings', path: '/contact-us' },
+          ]),
+        ]}
+      />
       <main className="page-hero split-page">
         <section className="page-title left">
           <span className="hero-kicker">Contact us</span>

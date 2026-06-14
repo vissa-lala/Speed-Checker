@@ -1,6 +1,8 @@
 import { Link, useParams } from 'react-router-dom';
 import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 import { articles } from '../content';
+import { organizationSchema, webPageSchema, articleSchema, breadcrumbSchema } from '../schema';
 
 export default function ArticlePage() {
   const { slug } = useParams();
@@ -8,6 +10,34 @@ export default function ArticlePage() {
 
   return (
     <Layout>
+      <SEO
+        title={`${article.title} | Speed Pings`}
+        description={article.description}
+        path={`/guides/${article.slug}`}
+        image={`https://speedpings.com${article.image}`}
+        type="article"
+        schema={[
+          organizationSchema,
+          webPageSchema({
+            path: `/guides/${article.slug}`,
+            title: `${article.title} | Speed Pings`,
+            description: article.description,
+            type: 'Article',
+          }),
+          articleSchema({
+            path: `/guides/${article.slug}`,
+            title: article.title,
+            description: article.description,
+            image: article.image,
+            sections: article.sections,
+          }),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Guides', path: '/guides' },
+            { name: article.title, path: `/guides/${article.slug}` },
+          ]),
+        ]}
+      />
       <main className="article-page">
         <article className="legal-container article-detail">
           <div className="article-visual big"><img src={article.image} alt={article.title} /></div>
