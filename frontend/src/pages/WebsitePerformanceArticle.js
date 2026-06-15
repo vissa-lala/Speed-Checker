@@ -1,41 +1,30 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link, Navigate, useParams } from 'react-router-dom';
 import Layout from '../components/Layout';
-import SEO from '../components/SEO';
 import { performancePages } from '../websitePerformanceContent';
-import { organizationSchema, webPageSchema, articleSchema, breadcrumbSchema } from '../schema';
+import { useSEO, articleSchema, breadcrumbSchema } from '../seo';
 
 export default function WebsitePerformanceArticle() {
   const { slug } = useParams();
-  const page = performancePages.find((item) => item.slug === slug) || performancePages[0];
+  const foundPage = performancePages.find((item) => item.slug === slug);
+  const page = foundPage || performancePages[0];
+  const path = `/website-performance/${page.slug}`;
+  useSEO({
+    title: `${page.title} | Speed Pings`,
+    description: page.description,
+    path,
+    type: 'article',
+    schemas: [
+      articleSchema({ title: page.title, description: page.description, path }),
+      breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Website Performance', path: '/website-performance' }, { name: page.title, path }])
+    ]
+  });
+
+  if (!foundPage) {
+    return <Navigate to="/website-performance" replace />;
+  }
 
   return (
     <Layout>
-      <SEO
-        title={`${page.title} | Speed Pings`}
-        description={page.description}
-        path={`/website-performance/${page.slug}`}
-        type="article"
-        schema={[
-          organizationSchema,
-          webPageSchema({
-            path: `/website-performance/${page.slug}`,
-            title: `${page.title} | Speed Pings`,
-            description: page.description,
-            type: 'Article',
-          }),
-          articleSchema({
-            path: `/website-performance/${page.slug}`,
-            title: page.title,
-            description: page.description,
-            sections: page.sections,
-          }),
-          breadcrumbSchema([
-            { name: 'Home', path: '/' },
-            { name: 'Website Performance', path: '/website-performance' },
-            { name: page.title, path: `/website-performance/${page.slug}` },
-          ]),
-        ]}
-      />
       <main className="article-page">
         <article className="legal-container article-detail">
           <div className="article-visual big performance-icon" aria-hidden="true">

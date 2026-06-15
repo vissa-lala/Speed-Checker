@@ -1,39 +1,33 @@
 import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
-import SEO from '../components/SEO';
 import { articles } from '../content';
-import { organizationSchema, webPageSchema, itemListSchema, breadcrumbSchema } from '../schema';
+import { useSEO, breadcrumbSchema, absoluteUrl } from '../seo';
 
 export default function Blog() {
+  const description = 'Helpful internet speed test guides about WiFi speed, broadband speed, fiber internet, 4G, 5G, download speed, upload speed, ping, jitter, gaming and streaming.';
+  useSEO({
+    title: 'Internet Speed Test, WiFi and Broadband Guides | Speed Pings',
+    description,
+    path: '/guides',
+    schemas: [
+      breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Guides', path: '/guides' }]),
+      {
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name: 'Internet Speed Guides',
+        description,
+        url: absoluteUrl('/guides'),
+        mainEntity: articles.map((article) => ({
+          '@type': 'Article',
+          headline: article.title,
+          description: article.description,
+          url: absoluteUrl(`/guides/${article.slug}`)
+        }))
+      }
+    ]
+  });
   return (
     <Layout>
-      <SEO
-        title="Internet Speed, WiFi & Ping Guides | Speed Pings"
-        description="Read simple guides about internet speed tests, WiFi speed, broadband, fiber internet, download speed, upload speed, ping, jitter, gaming, streaming and video calls."
-        path="/guides"
-        schema={[
-          organizationSchema,
-          webPageSchema({
-            path: '/guides',
-            title: 'Internet Speed, WiFi & Ping Guides | Speed Pings',
-            description: 'Read simple guides about internet speed tests, WiFi speed, broadband, fiber internet, download speed, upload speed, ping, jitter, gaming, streaming and video calls.',
-            type: 'CollectionPage',
-          }),
-          itemListSchema({
-            path: '/guides',
-            title: 'Internet Speed, WiFi & Ping Guides',
-            description: 'Speed Pings internet speed guide collection.',
-            items: articles.map((article) => ({
-              name: article.title,
-              path: `/guides/${article.slug}`,
-            })),
-          }),
-          breadcrumbSchema([
-            { name: 'Home', path: '/' },
-            { name: 'Guides', path: '/guides' },
-          ]),
-        ]}
-      />
       <main className="page-hero">
         <section className="page-title">
           <span className="hero-kicker">Speed Pings Guides</span>

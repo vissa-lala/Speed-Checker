@@ -1,43 +1,32 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link, Navigate, useParams } from 'react-router-dom';
 import Layout from '../components/Layout';
-import SEO from '../components/SEO';
 import { articles } from '../content';
-import { organizationSchema, webPageSchema, articleSchema, breadcrumbSchema } from '../schema';
+import { useSEO, articleSchema, breadcrumbSchema, absoluteUrl } from '../seo';
 
 export default function ArticlePage() {
   const { slug } = useParams();
-  const article = articles.find((item) => item.slug === slug) || articles[0];
+  const foundArticle = articles.find((item) => item.slug === slug);
+  const article = foundArticle || articles[0];
+  const path = `/guides/${article.slug}`;
+  const imageUrl = absoluteUrl(article.image);
+  useSEO({
+    title: `${article.title} | Speed Pings Guide`,
+    description: article.description,
+    path,
+    type: 'article',
+    image: imageUrl,
+    schemas: [
+      articleSchema({ title: article.title, description: article.description, path, image: imageUrl }),
+      breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Guides', path: '/guides' }, { name: article.title, path }])
+    ]
+  });
+
+  if (!foundArticle) {
+    return <Navigate to="/guides" replace />;
+  }
 
   return (
     <Layout>
-      <SEO
-        title={`${article.title} | Speed Pings`}
-        description={article.description}
-        path={`/guides/${article.slug}`}
-        image={`https://speedpings.com${article.image}`}
-        type="article"
-        schema={[
-          organizationSchema,
-          webPageSchema({
-            path: `/guides/${article.slug}`,
-            title: `${article.title} | Speed Pings`,
-            description: article.description,
-            type: 'Article',
-          }),
-          articleSchema({
-            path: `/guides/${article.slug}`,
-            title: article.title,
-            description: article.description,
-            image: article.image,
-            sections: article.sections,
-          }),
-          breadcrumbSchema([
-            { name: 'Home', path: '/' },
-            { name: 'Guides', path: '/guides' },
-            { name: article.title, path: `/guides/${article.slug}` },
-          ]),
-        ]}
-      />
       <main className="article-page">
         <article className="legal-container article-detail">
           <div className="article-visual big"><img src={article.image} alt={article.title} /></div>

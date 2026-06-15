@@ -1,39 +1,34 @@
 import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
-import SEO from '../components/SEO';
 import { performancePages } from '../websitePerformanceContent';
-import { organizationSchema, webPageSchema, itemListSchema, breadcrumbSchema } from '../schema';
+import { useSEO, breadcrumbSchema, absoluteUrl } from '../seo';
 
 export default function WebsitePerformance() {
+  const description = 'Learn Core Web Vitals, PageSpeed Insights, GTmetrix and website speed optimization with simple Speed Pings guides.';
+  useSEO({
+    title: 'Website Performance Guides | Speed Pings',
+    description,
+    path: '/website-performance',
+    schemas: [
+      breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Website Performance', path: '/website-performance' }]),
+      {
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name: 'Website Performance Guides',
+        description,
+        url: absoluteUrl('/website-performance'),
+        mainEntity: performancePages.map((page) => ({
+          '@type': 'Article',
+          headline: page.title,
+          description: page.description,
+          url: absoluteUrl(`/website-performance/${page.slug}`)
+        }))
+      }
+    ]
+  });
+
   return (
     <Layout>
-      <SEO
-        title="Website Performance Guides | Speed Pings"
-        description="Learn Core Web Vitals, PageSpeed Insights, GTmetrix and website speed optimization with simple Speed Pings guides."
-        path="/website-performance"
-        schema={[
-          organizationSchema,
-          webPageSchema({
-            path: '/website-performance',
-            title: 'Website Performance Guides | Speed Pings',
-            description: 'Learn Core Web Vitals, PageSpeed Insights, GTmetrix and website speed optimization with simple Speed Pings guides.',
-            type: 'CollectionPage',
-          }),
-          itemListSchema({
-            path: '/website-performance',
-            title: 'Website Performance Guides',
-            description: 'Website speed and Core Web Vitals guide collection.',
-            items: performancePages.map((page) => ({
-              name: page.title,
-              path: `/website-performance/${page.slug}`,
-            })),
-          }),
-          breadcrumbSchema([
-            { name: 'Home', path: '/' },
-            { name: 'Website Performance', path: '/website-performance' },
-          ]),
-        ]}
-      />
       <main className="page-hero">
         <section className="page-title">
           <span className="hero-kicker">Website Performance</span>

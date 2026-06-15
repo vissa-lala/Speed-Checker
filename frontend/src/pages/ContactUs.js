@@ -1,12 +1,21 @@
 import { useState } from 'react';
 import Layout from '../components/Layout';
-import SEO from '../components/SEO';
-import { organizationSchema, contactPageSchema, breadcrumbSchema } from '../schema';
+import { useSEO, breadcrumbSchema, absoluteUrl } from '../seo';
 
 const CONTACT_EMAIL = 'contact@speedpings.com';
 const FORMSUBMIT_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
 
 export default function ContactUs() {
+  const description = 'Contact Speed Pings for support, feedback, privacy questions, advertising queries or website improvement suggestions.';
+  useSEO({
+    title: 'Contact Speed Pings | Support and Feedback',
+    description,
+    path: '/contact-us',
+    schemas: [
+      breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Contact Speed Pings', path: '/contact-us' }]),
+      { '@context': 'https://schema.org', '@type': 'ContactPage', name: 'Contact Speed Pings', description, url: absoluteUrl('/contact-us') }
+    ]
+  });
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState('idle');
   const [feedback, setFeedback] = useState('');
@@ -67,22 +76,6 @@ export default function ContactUs() {
 
   return (
     <Layout>
-      <SEO
-        title="Contact Speed Pings"
-        description="Contact Speed Pings for questions about the internet speed test, guides, feedback or website support."
-        path="/contact-us"
-        schema={[
-          organizationSchema,
-          contactPageSchema({
-            title: 'Contact Speed Pings',
-            description: 'Contact Speed Pings for questions about the internet speed test, guides, feedback or website support.',
-          }),
-          breadcrumbSchema([
-            { name: 'Home', path: '/' },
-            { name: 'Contact Speed Pings', path: '/contact-us' },
-          ]),
-        ]}
-      />
       <main className="page-hero split-page">
         <section className="page-title left">
           <span className="hero-kicker">Contact us</span>

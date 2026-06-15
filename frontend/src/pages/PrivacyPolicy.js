@@ -1,27 +1,19 @@
 import Layout from '../components/Layout';
-import SEO from '../components/SEO';
-import { organizationSchema, webPageSchema, breadcrumbSchema } from '../schema';
+import { useSEO, breadcrumbSchema, absoluteUrl } from '../seo';
 
 export default function PrivacyPolicy() {
+  const description = 'Read the Speed Pings Privacy Policy for information about analytics, ads, contact forms, speed test data and third-party services.';
+  useSEO({
+    title: 'Privacy Policy | Speed Pings',
+    description,
+    path: '/privacy-policy',
+    schemas: [
+      breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Privacy Policy', path: '/privacy-policy' }]),
+      { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Privacy Policy', description, url: absoluteUrl('/privacy-policy') }
+    ]
+  });
   return (
     <Layout>
-      <SEO
-        title="Privacy Policy | Speed Pings"
-        description="Read the Speed Pings privacy policy for information about data, analytics, cookies and internet speed test usage."
-        path="/privacy-policy"
-        schema={[
-          organizationSchema,
-          webPageSchema({
-            path: '/privacy-policy',
-            title: 'Privacy Policy | Speed Pings',
-            description: 'Read the Speed Pings privacy policy for information about data, analytics, cookies and internet speed test usage.',
-          }),
-          breadcrumbSchema([
-            { name: 'Home', path: '/' },
-            { name: 'Privacy Policy', path: '/privacy-policy' },
-          ]),
-        ]}
-      />
       <main className="legal-container">
         <div className="legal-header">
           <span className="hero-kicker">Legal</span>

@@ -6,12 +6,25 @@ import './index.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import BackToTop from './components/BackToTop';
-import SEO from './components/SEO';
 import { articles, faqs } from './content';
-import { organizationSchema, websiteSchema, webPageSchema, softwareApplicationSchema, faqSchema, breadcrumbSchema } from './schema';
 import { useCopy } from './i18n';
+import { useSEO, appSchema, websiteSchema, organizationSchema } from './seo';
 
 function SpeedPings() {
+  useSEO({
+    title: 'Free Internet Speed Test | WiFi, Broadband & 5G | Speed Pings',
+    description: 'Run a free internet speed test for WiFi, broadband, fiber and 5G. Check download speed, upload speed, ping, jitter and latency online with Speed Pings.',
+    path: '/',
+    schemas: [appSchema, websiteSchema, organizationSchema, {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.slice(0, 6).map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer }
+      }))
+    }]
+  });
   const testRef = useRef(null);
   const testRunIdRef = useRef(0);
 
@@ -267,24 +280,7 @@ function SpeedPings() {
   return (
     <div className="speed-page">
       <div className="speed-app">
-        <SEO
-          title="Free Internet Speed Test | WiFi, Broadband & 5G"
-          description="Test your internet speed online for free with Speed Pings. Check download speed, upload speed, ping, jitter, latency, WiFi, broadband, fiber, 4G and 5G performance."
-          path="/"
-          schema={[
-            organizationSchema,
-            websiteSchema,
-            webPageSchema({
-              path: '/',
-              title: 'Free Internet Speed Test | WiFi, Broadband & 5G',
-              description: 'Test your internet speed online for free with Speed Pings. Check download speed, upload speed, ping, jitter, latency, WiFi, broadband, fiber, 4G and 5G performance.',
-            }),
-            softwareApplicationSchema(),
-            faqSchema(faqs.map(([question, answer]) => ({ question, answer }))),
-            breadcrumbSchema([{ name: 'Home', path: '/' }]),
-          ]}
-        />
-      <Header />
+        <Header />
 
         <main>
           <section className="hero-section">

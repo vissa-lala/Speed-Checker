@@ -1,27 +1,19 @@
 import Layout from '../components/Layout';
-import SEO from '../components/SEO';
-import { organizationSchema, webPageSchema, breadcrumbSchema } from '../schema';
+import { useSEO, breadcrumbSchema, absoluteUrl } from '../seo';
 
 export default function TermsOfService() {
+  const description = 'Read the Speed Pings Terms and Conditions for using the free internet speed test, guides and website content.';
+  useSEO({
+    title: 'Terms and Conditions | Speed Pings',
+    description,
+    path: '/terms-of-service',
+    schemas: [
+      breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Terms and Conditions', path: '/terms-of-service' }]),
+      { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Terms and Conditions', description, url: absoluteUrl('/terms-of-service') }
+    ]
+  });
   return (
     <Layout>
-      <SEO
-        title="Terms of Service | Speed Pings"
-        description="Read the Speed Pings terms of service for using the free internet speed test, guides and website features."
-        path="/terms-of-service"
-        schema={[
-          organizationSchema,
-          webPageSchema({
-            path: '/terms-of-service',
-            title: 'Terms of Service | Speed Pings',
-            description: 'Read the Speed Pings terms of service for using the free internet speed test, guides and website features.',
-          }),
-          breadcrumbSchema([
-            { name: 'Home', path: '/' },
-            { name: 'Terms of Service', path: '/terms-of-service' },
-          ]),
-        ]}
-      />
       <main className="legal-container">
         <div className="legal-header">
           <span className="hero-kicker">Legal</span>
