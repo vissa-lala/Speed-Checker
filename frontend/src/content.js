@@ -252,10 +252,84 @@ export const articles = [
 ];
 
 export const faqs = [
-  ['Is Speed Pings free?', 'Yes. Speed Pings is free to use. You do not need to create an account or install any app.'],
-  ['How accurate is the test?', 'The test gives a practical estimate of your current connection quality. Results can change depending on WiFi strength, device performance, network traffic, server route, and background apps.'],
-  ['Why are results different from ISP speeds?', 'ISP plans usually mention maximum possible speed. Your measured speed can be lower due to WiFi distance, router limits, old devices, local congestion, VPN usage, or many connected devices.'],
-  ['What is a good ping?', 'Lower ping is better. Below 50 ms is good for most online activities. Below 30 ms is excellent for gaming and real-time calls.'],
-  ['What is jitter?', 'Jitter is the variation in ping. Lower jitter means a more stable connection for video calls, gaming, and live streaming.'],
-  ['Should I test on WiFi or Ethernet?', 'Ethernet usually gives the most reliable result. WiFi results show the real experience on your wireless network, but they can be affected by distance and interference.']
+  {
+    question: 'Is Speed Pings free to use?',
+    answer: 'Yes. Speed Pings is free to use in your browser. You do not need to create an account or install an app to check download speed, upload speed, ping and jitter.'
+  },
+  {
+    question: 'How does Speed Pings measure internet speed?',
+    answer: 'Speed Pings runs a browser-based network test and estimates how quickly your connection can download and upload data. It also checks latency values such as ping and jitter so you can understand responsiveness and stability.'
+  },
+  {
+    question: 'How accurate is the speed test?',
+    answer: 'The test gives a practical estimate of your current connection quality. Results can change because of WiFi strength, router quality, device performance, server route, background apps, VPN usage and local network traffic.'
+  },
+  {
+    question: 'Why are my results different from my ISP plan?',
+    answer: 'Internet plans usually mention the maximum possible speed. Your real result can be lower because of WiFi distance, router limits, old devices, network congestion, VPN usage, weak mobile signal or many connected devices.'
+  },
+  {
+    question: 'Should I test on WiFi or Ethernet?',
+    answer: 'Ethernet usually gives the most stable result because it avoids wireless interference. WiFi testing is still useful because it shows the real speed you experience on phones, laptops and smart TVs.'
+  },
+  {
+    question: 'What is download speed?',
+    answer: 'Download speed shows how fast your device receives data from the internet. It affects website loading, streaming, app downloads, cloud files, game updates and social media browsing.'
+  },
+  {
+    question: 'What is upload speed?',
+    answer: 'Upload speed shows how fast your device sends data to the internet. It matters for video calls, sending large files, cloud backup, live streaming, online classes and remote work.'
+  },
+  {
+    question: 'What is a good ping?',
+    answer: 'Lower ping is better. Below 50 ms is good for most users, while below 30 ms is excellent for gaming, video calls and other real-time communication.'
+  },
+  {
+    question: 'What is jitter?',
+    answer: 'Jitter is the variation in ping over time. Lower jitter means your connection is more stable, which helps video calls, live meetings, streaming and online gaming feel smoother.'
+  },
+  {
+    question: 'Why does WiFi speed change often?',
+    answer: 'WiFi speed can change because of distance from the router, walls, interference, crowded channels, old routers, device limits and the number of connected users.'
+  },
+  {
+    question: 'What internet speed is good for streaming?',
+    answer: 'For HD streaming, 10 to 25 Mbps is usually comfortable. For 4K streaming, 25 Mbps or more per stream is better, especially if multiple people use the same connection.'
+  },
+  {
+    question: 'What internet speed is good for gaming?',
+    answer: 'Gaming needs stable latency more than very high Mbps. A stable connection with ping below 50 ms and low jitter usually feels better than a faster but unstable connection.'
+  },
+  {
+    question: 'What speed is good for video calls?',
+    answer: 'For smooth HD video calls, 10 to 25 Mbps download and 3 to 10 Mbps upload is usually comfortable for one user. Low jitter and stable ping are also important.'
+  },
+  {
+    question: 'How can I improve my internet speed?',
+    answer: 'Move closer to the router, use Ethernet when possible, restart the router, pause downloads, stop cloud backup, update router firmware and reduce the number of active devices during important work.'
+  },
+  {
+    question: 'Why is upload speed slower than download speed?',
+    answer: 'Many internet plans are designed with higher download speed than upload speed because most users download more than they upload. Fiber plans often provide better upload performance.'
+  },
+  {
+    question: 'Does VPN affect speed test results?',
+    answer: 'Yes. A VPN can increase ping and reduce download or upload speed because your traffic is routed through another server. Test once with VPN and once without VPN to compare.'
+  },
+  {
+    question: 'How many times should I test my speed?',
+    answer: 'Run the test two or three times at different times of the day. This gives a better view of your real connection than a single result.'
+  },
+  {
+    question: 'Why is my mobile data speed different indoors?',
+    answer: 'Mobile speed depends on tower distance, signal strength, building walls, network bands and tower congestion. Moving near a window or open area can improve results.'
+  },
+  {
+    question: 'Can Speed Pings help with AdSense or website SEO?',
+    answer: 'Speed Pings also includes website performance guides to help website owners understand loading speed, Core Web Vitals and practical optimization ideas, but it does not guarantee SEO ranking or AdSense approval.'
+  },
+  {
+    question: 'Does Speed Pings store my speed test result?',
+    answer: 'Speed Pings is designed as a simple browser-based tool. Always review the Privacy Policy for details about analytics, cookies and how website usage information may be processed.'
+  }
 ];

@@ -1,12 +1,13 @@
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Navigate, Routes, Route, useLocation } from 'react-router-dom';
-import SpeedPings from './SpeedPings';
+import SpeedPings from './SpeedChecker';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import AboutUs from './pages/AboutUs';
 import Blog from './pages/Blog';
 import ArticlePage from './pages/ArticlePage';
 import ContactUs from './pages/ContactUs';
+import Faq from './pages/Faq';
 
 function ScrollToHash() {
   const { pathname, hash } = useLocation();
@@ -33,6 +34,7 @@ function App() {
         <Route path="/guides/:slug" element={<ArticlePage />} />
         <Route path="/blog" element={<Navigate to="/guides" replace />} />
         <Route path="/blog/:slug" element={<Navigate to="/guides" replace />} />
+        <Route path="/faq" element={<Faq />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />

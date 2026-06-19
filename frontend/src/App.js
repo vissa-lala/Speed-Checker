@@ -8,6 +8,7 @@ import ArticlePage from './pages/ArticlePage';
 import ContactUs from './pages/ContactUs';
 import WebsitePerformance from './pages/WebsitePerformance';
 import WebsitePerformanceArticle from './pages/WebsitePerformanceArticle';
+import Faq from './pages/Faq';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/guides/:slug" element={<ArticlePage />} />
         <Route path="/website-performance" element={<WebsitePerformance />} />
         <Route path="/website-performance/:slug" element={<WebsitePerformanceArticle />} />
+        <Route path="/faq" element={<Faq />} />
         <Route path="/blog" element={<Navigate to="/guides" replace />} />
         <Route path="/blog/:slug" element={<Navigate to="/guides" replace />} />
         <Route path="/contact-us" element={<ContactUs />} />

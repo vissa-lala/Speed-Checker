@@ -30,6 +30,9 @@ function Footer() {
           <Link to="/website-performance" onClick={scrollTop}>
             Website Performance
           </Link>
+          <Link to="/faq" onClick={scrollTop}>
+            FAQ
+          </Link>
           <Link to="/about-us" onClick={scrollTop}>
             About Us
           </Link>

@@ -392,9 +392,9 @@ function SpeedPings() {
             </div>
           </section>
 
-          <section class="seo-box quick-seo-section">
-            <h1 class="hero-seo-title">Free Internet Speed Test</h1>
-            <p class="hero-seo-subtitle">
+          <section className="seo-box quick-seo-section">
+            <h1 className="hero-seo-title">Free Internet Speed Test</h1>
+            <p className="hero-seo-subtitle">
               Check WiFi speed, broadband speed, 5G speed, download, upload, ping test online and
               jitter in one simple test.
             </p>
@@ -503,6 +503,21 @@ function SpeedPings() {
               ))}
             </div>
           </section>
+
+          <section className="faq-list home-faq-preview" aria-label="Internet speed test questions">
+            <div className="section-heading">
+              <span className="hero-kicker">FAQ</span>
+              <h2>Common internet speed test questions</h2>
+            </div>
+            {faqs.slice(0, 6).map((faq) => (
+              <article className="faq-item" key={faq.question}>
+                <h2>{faq.question}</h2>
+                <p>{faq.answer}</p>
+              </article>
+            ))}
+            <Link className="primary-link" to="/faq">Read all FAQs →</Link>
+          </section>
+
         </main>
         <Footer />
         <BackToTop />
